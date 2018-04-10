@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-       
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,23 +24,23 @@ and open the template in the editor.
         <!-- Custom styles for this template-->
         <link href="assets/css/sb-admin.css" rel="stylesheet">
     </head>
-    </head>
-    <body>
-      <?php
-        include_once './assets/templates/header.php';
-       // include_once './assets/templates/dashboards.php';
-        //include_once './assets/templates/graficos.php';
-        ?>
-        <!-- Bootstrap core JavaScript-->
-        <script src="assets/vendor/jquery/jquery.min.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- Core plugin JavaScript-->
-        <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-        <!-- Custom scripts for all pages-->
-        <script src="assets/js/sb-admin.min.js"></script>
-        <!-- Custom scripts for this page-->
-        <script src="assets/vendor/chart.js/Chart.min.js"></script>
-        <!-- Custom scripts for this page-->
-        
-    </body>
+</head>
+<body>
+    <?php
+    include_once './assets/templates/header.php';
+    // include_once './assets/templates/dashboards.php';
+    //include_once './assets/templates/graficos.php';
+    ?>
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="assets/vendor/chart.js/Chart.min.js"></script>
+    <!-- Custom scripts for this page-->
+
+</body>
 </html>
