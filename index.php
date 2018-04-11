@@ -13,8 +13,8 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="assets/images/K_icon.png"/>
-        <title>Kyrios Dashboards</title>
+        <link rel="icon" href="assets/images/home-icon.png"/>
+        <title>Dashboards</title>
         <!--"assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"->
         <!-- Custom styles for this template-->
         <link href="assets/css/sb-admin.css" rel="stylesheet">
@@ -28,7 +28,7 @@ and open the template in the editor.
 <body>
     <?php
     include_once './assets/templates/header.php';
-    // include_once './assets/templates/dashboards.php';
+    include_once './assets/templates/cards.php';
     //include_once './assets/templates/graficos.php';
     ?>
     <!-- Bootstrap core JavaScript-->
@@ -41,6 +41,6 @@ and open the template in the editor.
     <!-- Custom scripts for this page-->
     <script src="assets/vendor/chart.js/Chart.min.js"></script>
     <!-- Custom scripts for this page-->
-
+    
 </body>
 </html>

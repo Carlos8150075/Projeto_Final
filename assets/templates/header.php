@@ -12,27 +12,27 @@
                 </a>
             </li>
 
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Utilitys">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Utilities">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-book"></i>
-                    <span class="nav-link-text">Utilitys</span>
+                    <span class="nav-link-text">Utilities</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href=".php">Electricidade</a>
+                        <a href="map.php">Electricidade</a>
                     </li>
                     <li>
-                        <a href=".php">Àgua</a>
+                        <a href="map2.php">Àgua</a>
                     </li>
 
 
                 </ul>
             </li>
 
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Atualizar Dados">
-                <a class="nav-link" href="loading.php">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mapa">
+                <a class="nav-link" href="map.php">
                     <i class="fa fa-fw fa-refresh"></i>
-                    <span class="nav-link-text">Atualizar dados</span>
+                    <span class="nav-link-text">Mapa</span>
                 </a>
             </li>
         </ul>
@@ -48,7 +48,7 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Logout.php">
+                <a class="nav-link" href="login.php">
                     <i class="fa fa-fw fa-sign-out"></i>Logout</a>
             </li>
         </ul>
