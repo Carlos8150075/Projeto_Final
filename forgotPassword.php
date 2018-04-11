@@ -7,16 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Forgot Pass</title>
+  <link rel="icon" href="assets/images/home-icon.png"/>
+  <link href="assets/css/geral.css" rel="stylesheet" type="text/css"/>
+  <title>Register</title>
   <!-- Bootstrap core CSS-->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/endor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="assets/css/sb-admin.css" rel="stylesheet">
 </head>
-
-<body class="bg-dark">
+<header>
+    <img src="assets/images/home-icon.png"/>
+</header>
+<body class="bg-dark" style="background-image:url(assets/images/fundo.png)">
   <div class="container">
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Reset Password</div>

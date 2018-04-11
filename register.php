@@ -8,6 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="assets/images/home-icon.png"/>
+  <link href="assets/css/geral.css" rel="stylesheet" type="text/css"/>
   <title>Register</title>
   <!-- Bootstrap core CSS-->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,8 +17,12 @@
   <!-- Custom styles for this template-->
   <link href="assets/css/sb-admin.css" rel="stylesheet">
 </head>
+<header>
+    <img src="assets/images/home-icon.png" />
+</header>
 
-<body class="bg-dark">
+<body class="bg-dark" style="background-image:url(assets/images/fundo.png)">
+    <img href="assets/images/home-icon.png"/>
   <div class="container">
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>

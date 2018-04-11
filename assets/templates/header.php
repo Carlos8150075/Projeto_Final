@@ -30,8 +30,8 @@
             </li>
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mapa">
-                <a class="nav-link" href="map.php">
-                    <i class="fa fa-fw fa-refresh"></i>
+                <a class="nav-link" href="map2.php">
+                    <i class="fa fa-fw far fa-globe"></i>
                     <span class="nav-link-text">Mapa</span>
                 </a>
             </li>
@@ -46,6 +46,45 @@
         <ul class="navbar-nav ml-auto">
             <li class="welcome">
 
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-envelope"></i>
+                    <span class="d-lg-none">Messages
+                        <span class="badge badge-pill badge-primary">12 New</span>
+                    </span>
+                    <span class="indicator text-primary d-none d-lg-block">
+                        <i class="fa fa-fw fa-circle"></i>
+                    </span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                    <h6 class="dropdown-header">New Messages:</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                        <strong>Pessoa</strong>
+                        <span class="small float-right text-muted">11:21 AM</span>
+                        <div class="dropdown-message small">Hey there! ..... </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item small" href="#">View all messages</a>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0 mr-lg-2">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Search for...">
+                        <span class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="login.php">
