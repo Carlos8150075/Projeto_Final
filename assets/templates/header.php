@@ -70,7 +70,7 @@
                     <a class="dropdown-item" href="#">
                         <strong>Pessoa</strong>
                         <span class="small float-right text-muted">11:21 AM</span>
-                        <div class="dropdown-message small">Vai te foder ricardo! ..... </div>
+                        <div class="dropdown-message small">Hiii there! ..... </div>
                     </a>
                     <div class="dropdown-divider"></div>
 
@@ -93,11 +93,11 @@
                 </form>
             </li>
             
-            <li class="welcome">
+            <li class="welcome text-secondary">
                 Bem-vindo, <?= $user_logado['username'] ?>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.php">
+            <li class="nav-item ">
+                <a class="nav-link text-secondary" href="login.php">
                     <i class="fa fa-fw fa-sign-out"></i>Logout</a>
             </li>
         </ul>

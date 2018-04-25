@@ -3,25 +3,32 @@ $registo = false;
 
 include_once 'assets/DatabaseConnection/DatabaseConnection.php';
 
+require_once __DIR__ . '/Config.php';
+//require_once Config::getApplicationServicesPath() . 'RemenberMeService.php';
+require_once Config::getApplicationValidatorPath() . 'validateUsers.php';
+
 
 //printf($_SERVER['REQUEST_METHOD'] == 'POST');
 //printf($_SERVER['REQUEST_METHOD']);
 
-
+//echo 'inicio';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  //  echo "entrei";
+    // echo "entrei";
     $array = filter_input_array(INPUT_POST);
     $username = $array['name'];
     $password = $array['pass'];
+    $password2 = $array['pass2'];
     $surname = $array['surname'];
     $regiao = $array['regiao'];
     $email = $array['email'];
-    
-    
-    //echo "olá";
-    DatabaseConnection::setUsers($username,$surname, $email, $password, $regiao);
-     header('Location: index.php');
-    
+
+    $errors = ValidateUser::validadeSignin($email, $password, $password2, $username, $surname);
+    var_dump($errors);
+    if (empty($errors)) {
+        //echo "sem erros";
+        DatabaseConnection::setUsers($username, $surname, $email, $password, $regiao);
+        header('Location: index.php');
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -72,7 +79,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Regiao</label>
-                            <input class="form-control" id="exampleInputEmail1" name="regiao" type="text" aria-describedby="emailHelp" placeholder="Enter email">
+                            <select name="regiao" aria-controls="dataTable" class="form-control form-control-sm">
+                                <option value="Viana do Castelo">Viana do Castelo</option>
+                                <option value="Braga">Braga</option>
+                                <option value="Vila Real">Vila Real</option>
+                                <option value="Bragança">Bragança</option>
+                                <option value="Porto">Porto</option>
+                                <option value="Aveiro">Aveiro</option>
+                                <option value="Viseu">Viseu</option>
+                                <option value="Guarda">Guarda</option>
+                                <option value="Coimbra">Coimbra</option>
+                                <option value="Leiria">Leiria</option>
+                                <option value="Castelo Branco">Castelo Branco</option>
+                                <option value="Santarem">Santarem</option>
+                                <option value="Lisboa">Lisboa</option>
+                                <option value="Portalegre">Portalegre</option>
+                                <option value="Evora">Evora</option>
+                                <option value="Setubal">Setubal</option>
+                                <option value="Beja">Beja</option>
+                                <option value="Faro">Faro</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <div class="form-row">
@@ -82,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleConfirmPassword">Confirm password</label>
-                                    <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password">
+                                    <input class="form-control" name="pass2" id="exampleConfirmPassword" type="password" placeholder="Confirm password">
                                 </div>
                             </div>
                         </div>

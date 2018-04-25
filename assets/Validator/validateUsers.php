@@ -46,11 +46,15 @@ class ValidateUser {
     }
 
     public static function validateNewEmail($email) {
-        $um = new UserManager();
-        return !$um->existUser($email);
+        $um = new DatabaseConnection();
+        if ($um->existUser($email) != FALSE) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     }
 
-    public static function validadeSignin($email, $password, $password2, $fName, $lName) {
+    public static function validadeSignin($email, $password, $password2, $name, $surname) {
         $errors = array();
         if (!self::validadeEmail($email)) {
             $errors['email'] = "Erro Email!";
@@ -58,17 +62,16 @@ class ValidateUser {
         if (!self::validatePassword($password)) {
             $errors['password'] = "Erro Password!";
         }
-        if (!self::validateName($fName)) {
-            $errors['fName'] = "Erro Primeiro Nome!";
+        if (!self::validateName($name)) {
+            $errors['name'] = "Erro Primeiro Nome!";
         }
-        if (!self::validateName($lName)) {
-            $errors['lName'] = "Erro Ultimo Nome!";
+        if (!self::validateName($surname)) {
+            $errors['surname'] = "Erro Ultimo Nome!";
         }
         if ($password !== $password2) {
             $errors['passwords'] = "Passwords não condizem!";
         }
-
-        if (!self::validateNewEmail($email)) {
+        if (self::validateNewEmail($email)) {
             $errors['user'] = 'Email já existe!';
         }
 
