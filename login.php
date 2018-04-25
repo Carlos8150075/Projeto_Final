@@ -1,3 +1,36 @@
+<?php
+include_once 'assets/DatabaseConnection/DatabaseConnection.php';
+
+require_once __DIR__ . '/Config.php';
+//require_once Config::getApplicationServicesPath() . 'RemenberMeService.php';
+require_once Config::getApplicationValidatorPath() . 'validateUsers.php';
+/*if (isset($_SESSION['user'])) {
+    DatabaseConnection::addAccess($_SESSION['user']);
+    header('Location: index.php');
+}*/
+$incorrect = "";
+$login = TRUE;
+ //echo 'nao entrei';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   // echo 'entrei';
+    $array = filter_input_array(INPUT_POST);
+    $errors = ValidateUser::validateLogin($array['email'], $array['pass']);
+    $username = $array['email'];
+    $password = $array['pass'];
+    var_dump($errors);
+    if (empty($errors)) {
+       /* if (isset($array['remenber'])) {
+            setcookie('email', $array['email'], time() + (3600 * 24), '/');
+            setcookie('password', $array['password'], time() + (3600 * 24), '/');
+        }*/
+        //echo 'entrei2';
+        $_SESSION['user'] = array('email'=>$array['email']);
+        header('Location: index.php');
+    } else if (!isset($errors['email'])) {
+        $email = $array['email'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,14 +59,14 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form>
+        <form method="post">
           <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <input class="form-control" name='email' id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+            <input class="form-control" id="exampleInputPassword1" name="pass" type="password" placeholder="Password">
           </div>
           <div class="form-group">
             <div class="form-check">
@@ -41,7 +74,7 @@
                 <input class="form-check-input" type="checkbox"> Remember Password</label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="login.php">Login</a>
+          <input type="submit" name='submit' value="Log In" class="btn btn-primary btn-block">
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="register.php">Register an Account</a>

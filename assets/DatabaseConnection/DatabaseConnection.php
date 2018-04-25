@@ -1,15 +1,16 @@
 <?php
 
 require_once __DIR__ . '/Medoo.php';
+require_once __DIR__ . '/../../Config.php';
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 class DatabaseConnection {
-    
+
     /**
      * 
      * @return \Medoo\MedooInstancia a Base de dados pela framework da Medoo, pronta para ser utilizada
@@ -34,8 +35,8 @@ class DatabaseConnection {
         $db->exec("" . $sql . "`" . $table . "`");
         echo '<br>';
     }
-    
-     /**
+
+    /**
      * Retorna ultimo utilizador a estar logado
      * @return array(chave -> valor) retorna ultimo utilizador a estar logado
      */
@@ -50,22 +51,44 @@ class DatabaseConnection {
      * @param String $username username do novo utilizador
      * @param String $password password do novo utilizador
      */
-    public static function setUser($username, $password) {
-        $user = self::getUser();
-        if ($username === $user['username'] && $password === $user['password']) {
-            $last_login = $user['last_login'];
-            $today = date('Y-m-d');
-            if (strtotime($last_login . '+1 day') >= $today) {
-                self::resetDB();
-            }
-        } else {
-            self::deleteFromTable('users_login');
-            $db = self::getDb();
-            $db->insert('users_login', array('username' => $username, 'password' => $password, 'last_login' => date('Y-m-d')));
-            self::resetDB();
-        }
+    public static function setLogins($username, $password) {
+        /* $user = self::getUser();
+          if ($username === $user['username'] && $password === $user['password']) {
+          $last_login = $user['last_login'];
+          $today = date('Y-m-d');
+          if (strtotime($last_login . '+1 day') >= $today) {
+          //self::resetDB();
+          }
+          } else {
+          self::deleteFromTable('users_login'); */
+        $db = self::getDb();
+        $db->insert('users_login', array('username' => $username, 'password' => $password, 'last_login' => date('Y-m-d')));
+        //self::resetDB();
+        //  }
     }
-    
+
+    /**
+     * Introduz na Base de dados um novo utilizador a estar logado
+     * @param String $username username do novo utilizador
+     * @param String $password password do novo utilizador
+     */
+    public static function setUsers($username, $surname, $email, $password, $regiao) {
+        /* $user = self::getUser();
+          if ($username === $user['username'] && $password === $user['password']) {
+          $last_login = $user['last_login'];
+          $today = date('Y-m-d');
+          if (strtotime($last_login . '+1 day') >= $today) {
+          //self::resetDB();
+          }
+          } else {
+          self::deleteFromTable('users_login'); */
+        $db = self::getDb();
+        $new_password = crypt($password, Config::CRYPT_CODE);
+        $db->insert('users', array('name' => $username, 'surname' => $surname, 'email' => $email, 'password' => $new_password, 'regiao' => $regiao));
+        //self::resetDB();
+        //  }
+    }
+
     /**
      * Adiciona um novo login á base de dados
      * @param String $name username de quem fez acesso no website
@@ -75,8 +98,7 @@ class DatabaseConnection {
         $db = self::getDb();
         $db->insert('login', array('date' => $date, 'user' => $name));
     }
-    
-    
+
     /**
      * Remove todos os dados da base de dados excepto o users_login e os dados de acessos
      */
@@ -85,12 +107,12 @@ class DatabaseConnection {
         $tables['login'] = 'login';
         $tables['users'] = 'users';
         $tables['utilities'] = 'utilities';
-        
+
         foreach ($tables as $value) {
             self::deleteFromTable($value);
         }
     }
-    
+
     /**
      * Devolve os acessos no webservice
      * @return array array chave valor em que a chave é o nome da tabela e o valor é o seu valor
@@ -98,8 +120,7 @@ class DatabaseConnection {
     public static function getLogins() {
         return self::getDb()->select('login', array('date', 'user'), array());
     }
-    
-    
+
     /**
      * Devolve o ultimo utilizador a estar logado
      * @return array array chave valor em que a chave é o nome da tabela e o valor é o seu valor
@@ -108,7 +129,7 @@ class DatabaseConnection {
         return self::getDb()->select('users_login', array('id', 'username',
                     'password', 'last_login'), $where);
     }
-    
+
     /**
      * Devolve os utilizadores da base de dados
      * @param array $where array chave valor em que a chave é o nome da tabela e o valor
@@ -116,16 +137,54 @@ class DatabaseConnection {
      * @return array array chave valor em que a chave é o nome da tabela e o valor é o seu valor
      */
     public static function getUsers($where) {
-        return self::getDb()->select('users', array('id', 'name','foto'), $where);
+        return self::getDb()->select('users', array('id', 'name', 'surname', 'email', ' password'), $where);
     }
-    
+
     /**
      * Devolve as utilities da base de dados
      * @param type $where
      * @return type
      */
-     public static function getUtilities($where) {
-        return self::getDb()->select('utilities', array('id', 'name','quantity','metric','day','month','year'), $where);
+    public static function getUtilities($where) {
+        return self::getDb()->select('utilities', array('id', 'name', 'quantity', 'metric', 'day', 'month', 'year'), $where);
+    }
+
+    /**
+     * verify if user exist
+     * @param string $email email of user
+     * @return boolean 
+     */
+    public function existUser($email) {
+        $db = self::getDb();
+
+        $query = ("SELECT * FROM users WHERE email='$email'");
+        $data = $db->exec($query)->fetchAll();
+        if (isset($data[0])) {
+            ////  echo 'existe';
+            return $data[0];
+        } else {
+            // echo 'nao existe';
+            return FALSE;
+        }
+    }
+
+    /**
+     * verify match from email and password
+     * @param string $email
+     * @param string $password
+     * @return boolean
+     */
+    public function validateUser($email, $password) {
+        if (self::existUser($email) != FALSE) {
+            echo 'true';
+            $user = self:: existUser($email);
+            // print_r($user);
+            //echo $password;
+            return ($password === $user['password']);
+        } else {
+            echo 'false';
+            return false;
+        }
     }
 
 }

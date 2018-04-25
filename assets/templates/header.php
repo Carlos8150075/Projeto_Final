@@ -1,3 +1,9 @@
+ <?php
+        include_once 'assets/DatabaseConnection/DatabaseConnection.php';
+        $db = new DatabaseConnection();
+        $user_logado = $db->getUser();
+    ?>
+
 <nav class="navbar navbar-expand-lg navbar-dark navbar-light bg-light fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.php"><img src="assets/images/home-icon.png" style="width: 30px;"/></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +70,7 @@
                     <a class="dropdown-item" href="#">
                         <strong>Pessoa</strong>
                         <span class="small float-right text-muted">11:21 AM</span>
-                        <div class="dropdown-message small">Hey there! ..... </div>
+                        <div class="dropdown-message small">Vai te foder ricardo! ..... </div>
                     </a>
                     <div class="dropdown-divider"></div>
 
@@ -85,6 +91,10 @@
                         </span>
                     </div>
                 </form>
+            </li>
+            
+            <li class="welcome">
+                Bem-vindo, <?= $user_logado['username'] ?>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="login.php">
