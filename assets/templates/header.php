@@ -1,7 +1,7 @@
  <?php
         include_once 'assets/DatabaseConnection/DatabaseConnection.php';
         $db = new DatabaseConnection();
-        $user_logado = $db->getUser();
+       // $user_logado = $db->getUser();
     ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-light bg-light fixed-top" id="mainNav">
@@ -94,7 +94,7 @@
             </li>
             
             <li class="welcome text-secondary">
-                Bem-vindo, <?= $user_logado['username'] ?>
+                Bem-vindo, 
             </li>
             <li class="nav-item ">
                 <a class="nav-link text-secondary" href="login.php">

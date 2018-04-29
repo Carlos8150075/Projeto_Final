@@ -39,12 +39,12 @@ class DatabaseConnection {
     /**
      * Retorna ultimo utilizador a estar logado
      * @return array(chave -> valor) retorna ultimo utilizador a estar logado
-     */
+     
     public static function getUser() {
         $db = self::getDb();
         $user = $db->select('users_login', array('username', 'password', 'last_login'))[0];
         return $user;
-    }
+    }/*
 
     /**
      * Introduz na Base de dados um novo utilizador a estar logado

@@ -3,7 +3,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Utilities mais utilizadas</a>
+          <a href="#">Ambientes</a>
         </li>
        
       </ol>
@@ -12,12 +12,12 @@
       <!-- Icon Cards-->
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-white o-hidden h-100" style="background-color: #1aa3ff">
-            <div class="card-body "style="background-color: #1aa3ff" >
+          <div class="card text-white bg-white o-hidden h-100 fundo" >
+            <div class="card-body fundo">
                 <div class="card-body-icon" style="zoom: 70%">
                 <i class="fa fa-fw fa-lightbulb-o"></i>
               </div>
-              <div class="mr-5">Electricidade</div>
+              <div class="mr-5">Casa</div>
             </div>
             <a class="card-footer text-primary clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
@@ -29,11 +29,11 @@
         </div>
         <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-white o-hidden h-100">
-            <div class="card-body bg-dark">
+            <div class="card-body fundo">
               <div class="card-body-icon " style="zoom: 75%">
                 <i class="fa fa-fw fa-tint "></i>
               </div>
-              <div class="mr-5">Água</div>
+              <div class="mr-5">Compras</div>
             </div>
             <a class="card-footer text-primary clearfix small  z-1" href="#">
               <span class="float-left">View Details</span>
@@ -44,14 +44,14 @@
           </div>
         </div>
         <div class="col-xl-3 col-sm-6 mb-3" >
-            <div class="card text-white  o-hidden h-100" style="background-color: #1aa3ff">
-            <div class="card-body " style="background-color: #1aa3ff">
-              <div class="card-body-icon" >
+            <div class="card text-white  o-hidden h-100" >
+            <div class="card-body fundo" >
+              <div class="card-body-icon" style="zoom: 65%" >
                 <i class="fa fa-fw fa fa-car"></i>
               </div>
-              <div class="mr-5">Combustivel</div>
+              <div class="mr-5">Carro</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-primary clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -61,7 +61,7 @@
         </div>
         <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-white o-hidden h-100">
-            <div class="card-body bg-primary ">
+            <div class="card-body fundo ">
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-free-code-camp smaller"></i>
               </div>
