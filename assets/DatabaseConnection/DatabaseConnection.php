@@ -39,14 +39,14 @@ class DatabaseConnection {
     /**
      * Retorna ultimo utilizador a estar logado
      * @return array(chave -> valor) retorna ultimo utilizador a estar logado
-     
-    public static function getUser() {
-        $db = self::getDb();
-        $user = $db->select('users_login', array('username', 'password', 'last_login'))[0];
-        return $user;
-    }/*
 
-    /**
+      public static function getUser() {
+      $db = self::getDb();
+      $user = $db->select('users_login', array('username', 'password', 'last_login'))[0];
+      return $user;
+      }/*
+
+      /**
      * Introduz na Base de dados um novo utilizador a estar logado
      * @param String $username username do novo utilizador
      * @param String $password password do novo utilizador
@@ -137,7 +137,34 @@ class DatabaseConnection {
      * @return array array chave valor em que a chave é o nome da tabela e o valor é o seu valor
      */
     public static function getUsers($where) {
-        return self::getDb()->select('users', array('id', 'name', 'surname', 'email', ' password'), $where);
+        return self::getDb()->select('users', array('id', 'name', 'surname', 'email', 'password', 'regiao', 'level', 'foto'), $where);
+    }
+
+    /**
+     * 
+     * @param type $where
+     * @return type
+     */
+    public static function getAmbientes($where) {
+        return self::getDb()->select('ambientes', array('id', 'id_utility', 'name', 'type'), $where);
+    }
+
+    /**
+     * 
+     * @param type $where
+     * @return type
+     */
+    public static function getPeriodo($where) {
+        return self::getDb()->select('periodo', array('id', 'id_utility', 'start', 'end', 'price'), $where);
+    }
+
+    /**
+     * 
+     * @param type $where
+     * @return type
+     */
+    public static function getRegistos($where) {
+        return self::getDb()->select('registo', array('id', 'id_user', 'id_utility', 'valor', 'date'), $where);
     }
 
     /**
@@ -146,7 +173,7 @@ class DatabaseConnection {
      * @return type
      */
     public static function getUtilities($where) {
-        return self::getDb()->select('utilities', array('id', 'name', 'quantity', 'metric', 'day', 'month', 'year'), $where);
+        return self::getDb()->select('utilities', array('id', 'id_ambiente', 'name', 'metric'), $where);
     }
 
     /**

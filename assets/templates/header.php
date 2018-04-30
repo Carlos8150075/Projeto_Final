@@ -17,19 +17,47 @@
                     <span class="nav-link-text">Dashboard</span>
                 </a>
             </li>
-
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Utilities">
+            
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registos">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-book"></i>
-                    <span class="nav-link-text">Utilities</span>
+                    <span class="nav-link-text">Registos</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="map.php">Electricidade</a>
+                        
+                        <a href="add_Registos.php">
+                            <i class="fa smaller fas fa-plus"></i> Adicionar Registos</a>
                     </li>
+                    <li>
+                        <a href="Registos.php">
+                            <i class="fa smaller fa-fw fa-book"></i> Tabela de Registos</a>
+                    </li>
+                    
+
+
+                </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Utilities">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-book"></i>
+                    <span class="nav-link-text">Utilities</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+                    <li>
+                        <a href="Registos.php">Electricidade</a>
+                    </li>
+                    <li>
+                        <a href="Registos.php">Gás</a>
+                    </li>
+                    
                     <li>
                         <a href="map2.php">Àgua</a>
                     </li>
+                    
 
 
                 </ul>
