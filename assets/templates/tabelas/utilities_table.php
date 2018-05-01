@@ -2,23 +2,22 @@
     <div class="container-fluid">
         <!-- Breadcrumbs-->
         <ol class="breadcrumb" style="margin-top: 60px">
-            <li class="breadcrumb-item active">Registos</li>
+            <li class="breadcrumb-item active">Utilities</li>
         </ol>
         <!-- Example DataTables Card-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> Tabela dos registos gerais</div>
+                <i class="fa fa-table"></i> Tabela das Utilities</div>
             <div class="card-body">
 
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Nº do Registo</th>
-                                <th>Consumidor</th>
-                                <th>Utility</th>
-                                <th>Valor</th>
-                                <th>Data</th>
+                                <th>Nº da Utility</th>
+                                <th>Ambiente</th>
+                                <th>Nome</th>
+                                <th>Metrica</th>
                             </tr>
                         </thead>
                         <tbody id="myTable">

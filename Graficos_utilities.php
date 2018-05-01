@@ -14,7 +14,7 @@ and open the template in the editor.
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="assets/images/home-icon.png"/>
-        <title>Registos</title>
+        <title>Dashboards</title>
         <!--"assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"->
         <!-- Custom styles for this template-->
         <link href="assets/css/sb-admin.css" rel="stylesheet">
@@ -22,15 +22,15 @@ and open the template in the editor.
         <!-- Custom fonts for this template-->
         <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Custom styles for this template-->
+        
         <link href="assets/css/sb-admin.css" rel="stylesheet">
-        <script src="assets/js/table_Registos.js" type="text/javascript"></script>
-       
+        <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
     </head>
 </head>
 <body>
     <?php
     include_once './assets/templates/header.php';
-    include_once './assets/templates/tabelas/registos_table.php';
+    include_once './assets/templates/graficos/utilities_graficos.php';
     ?>
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>

@@ -1,8 +1,9 @@
- <?php
-        include_once 'assets/DatabaseConnection/DatabaseConnection.php';
-        $db = new DatabaseConnection();
-       // $user_logado = $db->getUser();
-    ?>
+<?php
+include_once 'assets/DatabaseConnection/DatabaseConnection.php';
+$db = new DatabaseConnection();
+// $user_logado = $db->getUser();
+?>
+
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-light bg-light fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.php"><img src="assets/images/home-icon.png" style="width: 30px;"/></a>
@@ -17,15 +18,16 @@
                     <span class="nav-link-text">Dashboard</span>
                 </a>
             </li>
-            
-              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registos">
+
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registos">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-book"></i>
                     <span class="nav-link-text">Registos</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        
+
                         <a href="add_Registos.php">
                             <i class="fa smaller fas fa-plus"></i> Adicionar Registos</a>
                     </li>
@@ -33,31 +35,40 @@
                         <a href="Registos.php">
                             <i class="fa smaller fa-fw fa-book"></i> Tabela de Registos</a>
                     </li>
-                    
+
 
 
                 </ul>
             </li>
-            
-            
-            
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-sitemap"></i>
+                    <span class="nav-link-text">Gestao de Utilities</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti">
+
+                    <li>
+                        <a href="Utilities.php">
+                            <i class="fa smaller fa-fw fa-book"></i> Adicionar Utility</a>
+                    </li>
+
+                    <li>
+                        <a href="Utilities.php">
+                            <i class="fa smaller fa-fw fa-book"></i> Registo das utilities</a>
+                    </li>
+
+                </ul>
+            </li>
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Utilities">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-book"></i>
                     <span class="nav-link-text">Utilities</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-                    <li>
-                        <a href="Registos.php">Electricidade</a>
-                    </li>
-                    <li>
-                        <a href="Registos.php">Gás</a>
-                    </li>
-                    
-                    <li>
-                        <a href="map2.php">Àgua</a>
-                    </li>
-                    
+
+
 
 
                 </ul>
@@ -69,6 +80,14 @@
                     <span class="nav-link-text">Mapa</span>
                 </a>
             </li>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="testes">
+                <a class="nav-link" href="testes.php">
+                    <i class="fa fa-fw far fa-globe"></i>
+                    <span class="nav-link-text">Testes</span>
+                </a>
+            </li>
+
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
@@ -120,7 +139,7 @@
                     </div>
                 </form>
             </li>
-            
+
             <li class="welcome text-secondary">
                 Bem-vindo, 
             </li>
@@ -131,4 +150,5 @@
         </ul>
     </div>
 </nav>
+
 

@@ -23,6 +23,7 @@ and open the template in the editor.
         <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Custom styles for this template-->
         <link href="assets/css/sb-admin.css" rel="stylesheet">
+        <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
     </head>
 </head>
 <body style="background-color: white; padding-top: 70px; ">

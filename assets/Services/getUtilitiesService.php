@@ -7,7 +7,7 @@
  */
 
 
-session_start();
+//session_start();
 
 require_once '../DatabaseConnection/DatabaseConnection.php';
 
