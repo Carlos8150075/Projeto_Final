@@ -43,7 +43,7 @@ $db = new DatabaseConnection();
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-sitemap"></i>
+                    <i class="fa fa-fw fas fa-cogs"></i>
                     <span class="nav-link-text">Gestao de Utilities</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseMulti">
@@ -67,6 +67,7 @@ $db = new DatabaseConnection();
                     <span class="nav-link-text">Utilities</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+
 
 
 

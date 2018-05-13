@@ -50,7 +50,9 @@ function makeNavUtilities(utilitiesArray) {
             var tdName = document.createElement("a");
             tdName.innerHTML = utilitiesArray[i].name;
             tdName.setAttribute('href', 'Graficos_utilities.php');
-
+            tdName.setAttribute('id', 'teste');
+            tdName.setAttribute('onclick','myFunction()');
+            
             li.appendChild(tdName);
 
             var varUL = document.getElementById("collapseExamplePages");
@@ -59,9 +61,13 @@ function makeNavUtilities(utilitiesArray) {
             //    }
         }
     }
+    
+    
 
 
 }
+
+
 function initEvents() {
 
     setArray();

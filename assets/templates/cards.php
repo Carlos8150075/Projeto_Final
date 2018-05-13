@@ -15,7 +15,7 @@
           <div class="card text-white bg-white o-hidden h-100 fundo" >
             <div class="card-body fundo">
                 <div class="card-body-icon" style="zoom: 70%">
-                <i class="fa fa-fw fa-lightbulb-o"></i>
+                <i class="fa fa-fw fa-home"></i>
               </div>
               <div class="mr-5">Casa</div>
             </div>
@@ -65,9 +65,9 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-free-code-camp smaller"></i>
               </div>
-              <div class="mr-5">Gás</div>
+              <div class="mr-5">Outros...</div>
             </div>
-            <a class="card-footer text-primary clearfix small z-1" href="#">
+            <a class="card-footer text-primary  clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>

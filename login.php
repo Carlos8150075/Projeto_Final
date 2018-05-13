@@ -8,6 +8,8 @@ require_once Config::getApplicationValidatorPath() . 'validateUsers.php';
     DatabaseConnection::addAccess($_SESSION['user']);
     header('Location: index.php');
 }*/
+
+session_start();
 $incorrect = "";
 $login = TRUE;
  //echo 'nao entrei';
@@ -24,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             setcookie('password', $array['password'], time() + (3600 * 24), '/');
         }*/
         //echo 'entrei2';
-        $_SESSION['user'] = array('email'=>$array['email']);
+        $_SESSION['user'] = $username;
         header('Location: index.php');
     } else if (!isset($errors['email'])) {
         $email = $array['email'];

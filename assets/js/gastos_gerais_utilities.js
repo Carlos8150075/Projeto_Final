@@ -16,17 +16,19 @@ function makeCharts() {
     var arrayUtilities = JSON.parse(getJsonRegistos());
     
     var dataRegisto = [];
-
+    
     for (var i = 0; i < 12; i++) {
         dataRegisto[i] = 0;
         
     }
+    
 
     for (var i = 0; i < arrayUtilities.length; i++) {
         if (arrayUtilities[i].date != null)
             dataRegisto[parseInt(arrayUtilities[i].date.split('-')[1]) - 1]++;
     }
-
+    
+    
     var dataCustos = {
         label: "Gastos",
         data: dataRegisto,
