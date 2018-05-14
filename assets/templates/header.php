@@ -2,6 +2,8 @@
 include_once 'assets/DatabaseConnection/DatabaseConnection.php';
 $db = new DatabaseConnection();
 // $user_logado = $db->getUser();
+session_start();
+
 ?>
 
 
@@ -73,6 +75,14 @@ $db = new DatabaseConnection();
 
 
                 </ul>
+
+                <script>
+                    function myFunction() {
+                       var utilitie= event.target.innerHTML;
+                       localStorage.setItem("utilitie",utilitie);
+                       
+                    }
+                </script>
             </li>
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mapa">
@@ -142,7 +152,7 @@ $db = new DatabaseConnection();
             </li>
 
             <li class="welcome text-secondary">
-                Bem-vindo, 
+                Bem-vindo, <li id="utilizador" class="welcome text-secondary"><?php    echo $_SESSION['user']?></li>
             </li>
             <li class="nav-item ">
                 <a class="nav-link text-secondary" href="login.php">

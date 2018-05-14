@@ -24,7 +24,7 @@ function makeCharts() {
     
 
     for (var i = 0; i < arrayUtilities.length; i++) {
-        if (arrayUtilities[i].date != null)
+        if (arrayUtilities[i].date != null && arrayUtilities[i].id_user==9)
             dataRegisto[parseInt(arrayUtilities[i].date.split('-')[1]) - 1]++;
     }
     

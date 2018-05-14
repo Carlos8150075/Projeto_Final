@@ -1,3 +1,13 @@
+<?php 
+
+session_start();
+
+if (empty($_SESSION['user'])) {
+    header("Location: login.php");
+}
+    $id = $_SESSION['id'];
+
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -24,6 +34,15 @@ and open the template in the editor.
         <link href="assets/css/sb-admin.css" rel="stylesheet">
         <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
         <script src="assets/js/gastos_gerais_utilities.js" type="text/javascript"></script>
+        <script type="text/javascript">
+                      
+                           // alert('ola');
+                            
+                             var user = "<?php echo $id;?>";
+                          //alert(user);
+                          localStorage.setItem("utilizadorID",utilizador);
+                          
+                        </script>
     </head>
 </head>
 <body>

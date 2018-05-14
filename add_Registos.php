@@ -1,9 +1,45 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+$registo = false;
+
+include_once 'assets/DatabaseConnection/DatabaseConnection.php';
+
+require_once __DIR__ . '/Config.php';
+//require_once Config::getApplicationServicesPath() . 'RemenberMeService.php';
+require_once Config::getApplicationValidatorPath() . 'validateUsers.php';
+
+session_start();
+
+$utilizador = $_SESSION['user'];
+
+
+//printf($_SERVER['REQUEST_METHOD'] == 'POST');
+//printf($_SERVER['REQUEST_METHOD']);
+
+//echo 'inicio';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // echo "entrei";
+    $array = filter_input_array(INPUT_POST);
+  //  $username = $array['name'];
+    $utility = $array['utility'];
+    $valor = $array['valor'];
+    $date = $array['date'];
+
+     
+     $_SESSION['id']= DatabaseConnection::getUserByEmail($utilizador);
+     
+     $id=$_SESSION['id'];
+     
+     DatabaseConnection::addRegistos($id, $utility, $valor, $date);
+   
+    //$errors = ValidateUser::validadeSignin($email, $password, $password2, $username, $surname);
+   // var_dump($errors);
+   // if (empty($errors)) {
+        //echo "sem erros";
+     //   DatabaseConnection::setUsers($username, $utility, $valor, $date);
+      //  header('Location: index.php');
+ //   }
+}
+?>
 <html>
     <head>
 
@@ -23,15 +59,16 @@ and open the template in the editor.
         <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Custom styles for this template-->
         <link href="assets/css/sb-admin.css" rel="stylesheet">
+        <script src="assets/js/gerate_addutilitie.js" type="text/javascript"></script>
     </head>
 </head>
 <body>
     <?php
-    include_once './assets/templates/header.php';
+   include_once './assets/templates/header.php';
     ?>
     
     
-    <div class="container-fluid" style="margin-top: 100px;margin-left: 300px; padding-right:400px " >
+    <div style="margin-top: 50px;margin-left: 500px;  padding-right:400px ; " >
     <div class="card  mx-auto mt-5">
       <div class="card-header">Adicionar registo</div>
       <div class="card-body">
@@ -39,9 +76,8 @@ and open the template in the editor.
             
             <div class="form-group">
                             <label for="exampleInputEmail1">Utility</label>
-                            <select name="utility" aria-controls="dataTable" class="form-control form-control-sm">
-                                <option value="0">Eletricidade</option>
-                                <option value="1">Gás</option>
+                            <select name="utility" aria-controls="dataTable" class="form-control form-control-sm" id="addUtilitie">
+        
                             </select>
                         </div>
           <div class="form-group">
@@ -50,7 +86,7 @@ and open the template in the editor.
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Data: </label>
-            <input class="form-control" id="exampleInputPassword1" name="pass" type="date" placeholder="Password">
+            <input class="form-control" id="exampleInputPassword1" name="date" type="date" placeholder="Password">
           </div>
           <input type="submit" name='submit' value="Adicionar" class="btn btn-primary btn-block">
         </form>

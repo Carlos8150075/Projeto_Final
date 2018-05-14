@@ -88,7 +88,58 @@ class DatabaseConnection {
         //self::resetDB();
         //  }
     }
+    
+    
+    /**
+     * 
+     * @param type $username
+     * @param type $utilitie
+     * @param type $valor
+     * @param type $date
+     */
+     public static function addRegistos($username, $utility, $valor, $date) {
+      
+        $db = self::getDb();
+        $db->insert('registo', array('id_user' => $username, 'id_utility' => $utility, 'valor' => $valor, 'date' => $date));
+        //self::resetDB();
+        //  }
+    }
+    
+    public static function getUserByEmail($email) {
+        
+         $db = self::getDb();
 
+        $query = ("SELECT * FROM users WHERE email='$email'");
+        $data = $db->exec($query)->fetchAll();
+        
+        
+        return $data[0]['id'];
+
+    }
+    
+    public static function getNomeByEmail($email) {
+        
+         $db = self::getDb();
+
+        $query = ("SELECT * FROM users WHERE email='$email'");
+        $data = $db->exec($query)->fetchAll();
+        
+        
+        return $data[0]['name'];
+
+    }
+    
+     public static function getUtilityByID($id) {
+        
+         $db = self::getDb();
+
+        $query = ("SELECT * FROM utilities WHERE id='$id'");
+        $data = $db->exec($query)->fetchAll();
+        
+        
+        return $data[0]['name'];
+
+    }
     /**
      * Adiciona um novo login á base de dados
      * @param String $name username de quem fez acesso no website

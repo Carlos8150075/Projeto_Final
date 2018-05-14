@@ -107,6 +107,11 @@ function makeMonthChartDeath(year) {
             }
         }
     }
+    
+    var sessionValue = '<%=Session["user"]%>';
+    //alert(sessionValue);
+    
+    
 
    
 
@@ -141,9 +146,9 @@ function makeMonthChartDeath(year) {
 
     var but = document.createElement("button");
     but.setAttribute('id', 'resetGraph');
-    but.setAttribute('class', 'btn btn-primary');
-    but.setAttribute('style', 'margin-left: 48%;');
-    but.innerHTML = "Voltar";
+    but.setAttribute('class', 'btn btn-black');
+    but.setAttribute('style', 'margin-left: 300px;');
+    but.innerHTML = "Clear";
 
     but.addEventListener('click', function () {
         myBarChart.destroy();
@@ -160,6 +165,8 @@ function initialGraph() {
     var ctx = document.getElementById("barras_utilities2");
 // String de teste
     var jsonString = getJsonRegistos();
+   //alert(localStorage.utilitie);
+   alert(localStorage.utilizador);
 
     var obj = JSON.parse(jsonString);
     var array = obj;
@@ -216,8 +223,11 @@ function initialGraph() {
             }
 
         }
+        
 
     });
+    
+    
 }
 
 
