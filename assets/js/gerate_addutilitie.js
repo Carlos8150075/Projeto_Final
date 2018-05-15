@@ -49,7 +49,7 @@ function makeNavUtilities(utilitiesArray) {
             var utilitie = document.createElement("OPTION");
             utilitie.innerHTML = utilitiesArray[i].name;
             utilitie.setAttribute('id', 'utilitie');
-            utilitie.setAttribute('value', i);
+            utilitie.setAttribute('value', utilitiesArray[i].id);
            
 
             var varUL = document.getElementById("addUtilitie");

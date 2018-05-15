@@ -2,6 +2,8 @@
 include_once 'assets/DatabaseConnection/DatabaseConnection.php';
 $db = new DatabaseConnection();
 // $user_logado = $db->getUser();
+
+error_reporting(E_ALL ^ E_NOTICE); 
 session_start();
 
 ?>
@@ -51,7 +53,7 @@ session_start();
                 <ul class="sidenav-second-level collapse" id="collapseMulti">
 
                     <li>
-                        <a href="Utilities.php">
+                        <a href="add_utility.php">
                             <i class="fa smaller fa-fw fa-book"></i> Adicionar Utility</a>
                     </li>
 
@@ -155,8 +157,8 @@ session_start();
                 Bem-vindo, <li id="utilizador" class="welcome text-secondary"><?php echo $_SESSION['user']?></li>
             </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fas fa-cogs"></i>
+                <a class="nav-link dropdown-toggle mr-lg-2 text-secondary" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fas fa-cogs "></i>
                     
                 </a>
                 <div class="dropdown-menu bg-light" aria-labelledby="messagesDropdown">

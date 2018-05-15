@@ -50,6 +50,46 @@ and open the template in the editor.
     <?php
     include_once './assets/templates/header.php';
     ?>
+    
+    
+<div class="content-wrapper" style="height: 100%"> 
+    <div class="container-fluid" style="margin-top: 120px">
+        <div class="card mb-3"  style="width: 66%; margin-left: 16.667%">
+            <div class="card card-header">
+                    <h3 class="panel-title"><?= $fam['name'];  ?></h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-user-information">
+                    <tbody>
+                        <tr>
+                            <td>ID</td>
+                            <td><?php echo $id ?></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td><?php echo $_SESSION['nome'];?></td>
+                            <td>Username</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Regiao</td>
+                            <td> Braga</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><?php echo $_SESSION['user'];?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <a data-toggle="tooltip" type="button" class="btn btn-sm btn-light" href="index.php"style="height: 38px;">Inicio</i></a>
+              
+            </div> 
+
+        </div>
+    </div>
+</div>
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

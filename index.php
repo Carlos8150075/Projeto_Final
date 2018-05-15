@@ -35,6 +35,7 @@ and open the template in the editor.
         <link href="assets/css/sb-admin.css" rel="stylesheet">
         <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
         <script src="assets/js/gastos_gerais_utilities.js" type="text/javascript"></script>
+        <script src="assets/js/gastos_gerais_utilities2.js" type="text/javascript"></script>
         <script type="text/javascript">
                       
                            // alert('ola');

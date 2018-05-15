@@ -79,4 +79,11 @@ function makeCharts() {
    
 }
 
-document.addEventListener('DOMContentLoaded', makeCharts);
+function initEvents() {
+   
+    makeCharts();
+    
+
+}
+
+document.addEventListener('DOMContentLoaded', initEvents);

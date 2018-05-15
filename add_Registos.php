@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ?>
     
     
-    <div style="margin-top: 50px;margin-left: 500px;  padding-right:400px ; " >
+    <div style="margin-top: 120px;margin-left: 500px;  padding-right:400px ; " >
     <div class="card  mx-auto mt-5">
       <div class="card-header">Adicionar registo</div>
       <div class="card-body">
