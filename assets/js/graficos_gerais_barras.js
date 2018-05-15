@@ -108,7 +108,7 @@ function makeMonthChartDeath(year) {
         }
     }
     
-    var sessionValue = '<%=Session["user"]%>';
+   // var sessionValue = '<%=Session["user"]%>';
     //alert(sessionValue);
     
     
@@ -148,7 +148,7 @@ function makeMonthChartDeath(year) {
     but.setAttribute('id', 'resetGraph');
     but.setAttribute('class', 'btn btn-black');
     but.setAttribute('style', 'margin-left: 300px;');
-    but.innerHTML = "Clear";
+    but.innerHTML = "Back";
 
     but.addEventListener('click', function () {
         myBarChart.destroy();
@@ -166,7 +166,7 @@ function initialGraph() {
 // String de teste
     var jsonString = getJsonRegistos();
    //alert(localStorage.utilitie);
-   alert(localStorage.utilizador);
+   //alert(localStorage.utilizadorID);
 
     var obj = JSON.parse(jsonString);
     var array = obj;

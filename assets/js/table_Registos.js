@@ -46,13 +46,14 @@ function getSearchFilter() {
 
 function makeRegistosTable(registosArray) {
     clearTable()
+    var utilizador= localStorage.utilizadorID;
 
     if (registosArray == 0) {
         var tbody = document.getElementById("myTable");
         tbody.innerHTML = "Não existem resultados!";
     } else {
         for (var i = 0; i < registosArray.length; i++) {
-            if (registosArray[i].utility == 0) {
+          if (registosArray[i].user == utilizador) {
                 var tr = document.createElement("tr");
 
                 var tdId = document.createElement("td");
@@ -66,9 +67,9 @@ function makeRegistosTable(registosArray) {
                 var tdDate = document.createElement("td");
                 tdDate.innerHTML = registosArray[i].date;
 
-
-                tr.appendChild(tdUser);
                 tr.appendChild(tdId);
+                tr.appendChild(tdUser);
+                
                 tr.appendChild(tdutility);
                 tr.appendChild(tdValor);
                 tr.appendChild(tdDate);
@@ -76,7 +77,7 @@ function makeRegistosTable(registosArray) {
                 var tbody = document.getElementById("myTable");
 
                 tbody.appendChild(tr);
-            }
+           }
         }
     }
 }

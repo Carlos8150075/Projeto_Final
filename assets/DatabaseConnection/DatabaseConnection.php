@@ -224,7 +224,7 @@ class DatabaseConnection {
      * @return type
      */
     public static function getUtilities($where) {
-        return self::getDb()->select('utilities', array('id', 'id_ambiente', 'name', 'metric'), $where);
+        return self::getDb()->select('utilities', array('id', 'id_ambiente', 'name', 'metric','id_user'), $where);
     }
 
     /**

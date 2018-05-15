@@ -49,8 +49,6 @@ and open the template in the editor.
 <body>
     <?php
     include_once './assets/templates/header.php';
-    include_once './assets/templates/cards.php';
-    include_once './assets/templates/graficos/iniciais.php';
     ?>
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>

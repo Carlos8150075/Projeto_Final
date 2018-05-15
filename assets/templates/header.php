@@ -152,10 +152,30 @@ session_start();
             </li>
 
             <li class="welcome text-secondary">
-                Bem-vindo, <li id="utilizador" class="welcome text-secondary"><?php    echo $_SESSION['user']?></li>
+                Bem-vindo, <li id="utilizador" class="welcome text-secondary"><?php echo $_SESSION['user']?></li>
+            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fas fa-cogs"></i>
+                    
+                </a>
+                <div class="dropdown-menu bg-light" aria-labelledby="messagesDropdown">
+                    
+                    
+                    <a class="dropdown-item" href="perfil.php">
+                        
+                        <div class="dropdown-message">Perfil</div>
+                    </a><div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="perfil.php">
+                        
+                        <div class="dropdown-message ">Definiçoes</div>
+                    </a>
+                   
+
+                </div>
             </li>
             <li class="nav-item ">
-                <a class="nav-link text-secondary" href="login.php">
+                <a class="nav-link text-secondary" href="logout.php">
                     <i class="fa fa-fw fa-sign-out"></i>Logout</a>
             </li>
         </ul>

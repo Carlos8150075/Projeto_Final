@@ -17,14 +17,16 @@ function makeCharts() {
     
     var dataRegisto = [];
     
+    var utilizadorID = localStorage.utilizadorID;
+    
     for (var i = 0; i < 12; i++) {
         dataRegisto[i] = 0;
         
     }
     
-
+     
     for (var i = 0; i < arrayUtilities.length; i++) {
-        if (arrayUtilities[i].date != null && arrayUtilities[i].id_user==9)
+        if (arrayUtilities[i].date != null && arrayUtilities[i].id_user== utilizadorID)
             dataRegisto[parseInt(arrayUtilities[i].date.split('-')[1]) - 1]++;
     }
     

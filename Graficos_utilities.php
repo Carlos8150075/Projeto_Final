@@ -25,7 +25,9 @@ and open the template in the editor.
         
         <link href="assets/css/sb-admin.css" rel="stylesheet">
         <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
-        <script src="assets/js/graficos_gerais.js" type="text/javascript"></script>
+        <script src="assets/js/graficos_gerais_barras.js" type="text/javascript"></script>
+        <script src="assets/js/graficos_gerais_circular.js" type="text/javascript"></script>
+        <script src="assets/js/graficos_gerais_linhas.js" type="text/javascript"></script>
     </head>
 </head>
 <body>
