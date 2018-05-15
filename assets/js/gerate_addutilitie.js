@@ -11,12 +11,13 @@ function getJsonUtilities(){
 
 class Utilities {
 
-    constructor(id, ambiente, name, metric) {
+    constructor(id, ambiente, name, metric, user) {
 
         this.id = id;
         this.ambiente = ambiente;
         this.name = name;
         this.metric = metric;
+        this.user= user;
 
     }
 
@@ -32,19 +33,21 @@ function setArray() {
     var array = obj;
     for (var i = 0; i < array.length; i++) {
         var objetoJSON = array[i];
-        arrayPrincipal[i] = new Utilities(objetoJSON.id, objetoJSON.id_ambiente, objetoJSON.name, objetoJSON.metric);
+        arrayPrincipal[i] = new Utilities(objetoJSON.id, objetoJSON.id_ambiente, objetoJSON.name, objetoJSON.metric,objetoJSON.id_user);
     }
 }
 
 
 function makeNavUtilities(utilitiesArray) {
+    
+    var utilizador=localStorage.utilizadorID;
 
     if (utilitiesArray == 0) {
         var varUL = document.getElementById("addUtilitie");
         varUL.innerHTML = "Não existem resultados!";
     } else {
         for (var i = 0; i < utilitiesArray.length; i++) {
-            // if (utilitiesArray[i].utility == 0) {    
+            if (utilitiesArray[i].user == utilizador) {    
            
             var utilitie = document.createElement("OPTION");
             utilitie.innerHTML = utilitiesArray[i].name;
@@ -57,7 +60,7 @@ function makeNavUtilities(utilitiesArray) {
             varUL.appendChild(utilitie);
             //    }
         }
-    }
+    }}
     
     
 
