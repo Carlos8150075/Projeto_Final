@@ -84,8 +84,8 @@ function getMonth(month) {
 
 
 
-function makeMonthChartDeath(year) {
-    var ctx = document.getElementById("barras_utilities2");
+function makeMonthChartDeath2(year) {
+    var ctx = document.getElementById("barras_utilities2teste");
 // String de teste
     var jsonString = getJsonRegistos();
 
@@ -160,17 +160,17 @@ function makeMonthChartDeath(year) {
 
     but.addEventListener('click', function () {
         myBarChart.destroy();
-        initialGraph();
+        initialGraph2();
         this.parentNode.removeChild(this);
-        document.getElementById('tableContainer2').innerHTML = "";
+        document.getElementById('tableContainer2teste').innerHTML = "";
 
     });
 
-    document.getElementById('barras_utilities').appendChild(but);
+    document.getElementById('barras_utilitiesteste').appendChild(but);
 }
 
-function initialGraph() {
-    var ctx = document.getElementById("barras_utilities2");
+function initialGraph2() {
+    var ctx = document.getElementById("barras_utilities2teste");
 // String de teste
     var jsonString = getJsonRegistos();
     //alert(localStorage.utilitie);
@@ -187,18 +187,68 @@ function initialGraph() {
     var labels = [];
     var data = [];
     var count = 0;
+    
+    var numeroJan = 0;
+    var numeroFev = 0;
+    var numeroMar = 0;
+    var numeroAbr = 0;
+    var numeroMai = 0;
+    var numeroJun = 0;
+    var numeroJul = 0;
+    var numeroAgo = 0;
+    var numeroSet = 0;
+    var numeroOut = 0;
+    var numeroNov = 0;
+    var numeroDez = 0;
 
     for (var i = 0; i < array.length; i++) {
 
         var objetoJSON = array[i];
         var date = objetoJSON.date.split('-');
         if (objetoJSON.id_user == utilizador && objetoJSON.id_utility == utility) {
-            if (labels.includes(date[0])) {
-                data[labels.indexOf(date[0])]++;
-            } else {
-                labels[count] = date[0];
-                data[count] = 1;
-                count++;
+              if (objetoJSON.date != null) {
+                var mes = objetoJSON.date.substring(5, 7);
+
+                if (mes == 01) {
+
+                    numeroJan += parseInt(objetoJSON.valor);
+                }
+                if (mes == 02) {
+                    numeroFev += parseInt(objetoJSON.valor);
+                }
+                if (mes == 03) {
+                    numeroMar = parseInt(objetoJSON.valor);
+                }
+                if (mes == 04) {
+                    // alert(numeroAbr);
+                    //  alert(objetoJSON.valor);
+                    numeroAbr += parseInt(objetoJSON.valor);
+                }
+                if (mes == 05) {
+                    numeroMai += parseInt(objetoJSON.valor);
+                }
+                if (mes == 06) {
+                    numeroJun += parseInt(objetoJSON.valor);
+                }
+                if (mes == 07) {
+                    numeroJul += parseInt(objetoJSON.valor);
+                }
+                if (mes == 08) {
+                    numeroAgo += parseInt(objetoJSON.valor);
+                }
+                if (mes == 09) {
+                    numeroSet += parseInt(objetoJSON.valor);
+                    //alert(numeroSet);
+                }
+                if (mes == 10) {
+                    numeroOut += parseInt(objetoJSON.valor);
+                }
+                if (mes == 11) {
+                    numeroNov += parseInt(objetoJSON.valor);
+                }
+                if (mes == 12) {
+                    numeroDez += parseInt(objetoJSON.valor);
+                }
             }
         }
     }
@@ -210,11 +260,13 @@ function initialGraph() {
     var myBarChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: labels,
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho",
+                "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
             datasets: [{
-                    label: "Custos",
-                    data: data,
+                    data: [numeroJan, numeroFev, numeroMar, numeroAbr, numeroMai, numeroJun,
+                        numeroJul, numeroAgo, numeroSet, numeroOut, numeroNov, numeroDez],
                     backgroundColor: '#3399ff'
+
                 }]
         },
         options: {
@@ -236,7 +288,7 @@ function initialGraph() {
                 if (element.length > 0) {
 
                     myBarChart.destroy();
-                    makeMonthChartDeath(labels[element[0]._index]);
+                    makeMonthChartDeath2(labels[element[0]._index]);
                 }
             }
 
@@ -252,7 +304,7 @@ function initialGraph() {
 
 
 function initEvents() {
-    initialGraph();
+    initialGraph2();
 }
 
 document.addEventListener('DOMContentLoaded', initEvents);

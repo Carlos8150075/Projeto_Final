@@ -80,8 +80,13 @@ session_start();
 
                 <script>
                     function myFunction() {
+                        
+                        
                        var utilitie= event.target.innerHTML;
+                       var utilityID=event.target.getAttribute('value');
+                       
                        localStorage.setItem("utilitie",utilitie);
+                       localStorage.setItem("utilityID",utilityID);
                        
                     }
                 </script>

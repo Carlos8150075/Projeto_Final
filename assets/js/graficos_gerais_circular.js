@@ -33,12 +33,14 @@ function makeChart() {
     var numeroDez = 0;
 
     var utilizador = localStorage.utilizadorID;
+    var utility = localStorage.utilityID;
+    
 
 
     for (var i = 0; i < array.length; i++) {
         var objetoJSON = array[i];
         //alert(objetoJSON.valor);    
-        if (objetoJSON.id_user == utilizador) {
+        if (objetoJSON.id_user == utilizador && objetoJSON.id_utility==utility) {
             if (objetoJSON.date != null) {
                 var mes = objetoJSON.date.substring(5, 7);
 

@@ -55,6 +55,19 @@
             </div>
             <div class="card-footer small text-muted"></div>
         </div>
+        <div class="card mb-3" >
+            <!-- Example Pie Chart Card-->
+
+            <div class="card-header" id="barras_utilitiesteste" >
+                <i class="fa fa-bar-chart" style="margin-right: 20px"></i>Valor gasto em cada mês</div>
+            <div class="card-body" style="font-size: 0.7rem">
+                <canvas id="barras_utilities2teste" style="padding-left:auto;"></canvas>
+                <div class="card-body" id="tableContainer2teste"></div>
+            </div>
+            <div class="card-footer small text-muted"></div>
+
+        </div>
+
 
         <div class="col-lg-6">
             <div class="card mb-3" >
@@ -68,20 +81,22 @@
                 </div>
                 <div class="card-footer small text-muted"></div>
 
-</div>
             </div>
-            <div class="col-lg-8">
-                <!-- Example Bar Chart Card-->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <i class="fa fa-pie-chart"></i>Grafico Circular</div>
-                    <div class="card-body">
-                        <canvas id="utilities_circular" width="100" height="50"></canvas>
-                    </div>
-                    <div class="card-footer small text-muted"></div>
+        </div>
+
+
+        <div class="col-lg-8">
+            <!-- Example Bar Chart Card-->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-pie-chart"></i>Grafico Circular</div>
+                <div class="card-body">
+                    <canvas id="utilities_circular" width="100" height="50"></canvas>
                 </div>
+                <div class="card-footer small text-muted"></div>
             </div>
-        
+        </div>
+
 
     </div>
 </div>

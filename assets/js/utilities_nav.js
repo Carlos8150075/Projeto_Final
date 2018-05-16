@@ -53,6 +53,7 @@ var utilizador=localStorage.utilizadorID;
             tdName.innerHTML = utilitiesArray[i].name;
             tdName.setAttribute('href', 'Graficos_utilities.php');
             tdName.setAttribute('id', 'teste');
+            tdName.setAttribute('value', utilitiesArray[i].id);
             tdName.setAttribute('onclick','myFunction()');
             
             li.appendChild(tdName);

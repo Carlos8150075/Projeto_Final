@@ -68,51 +68,61 @@ function makeLineChart() {
     var numeroOut = 0;
     var numeroNov = 0;
     var numeroDez = 0;
+    
+    
+
+    var utilizador = localStorage.utilizadorID;
+    var utility = localStorage.utilityID;
 
     var anos = [];
     var count = 0;
     for (var i = 0; i < array.length; i++) {
         var objetoJSON = array[i];
+        if (objetoJSON.id_user == utilizador && objetoJSON.id_utility==utility) {
         if (objetoJSON.date !== null) {
             var mes = objetoJSON.date.split("-")[1];
             //alert(mes);
             if (mes == 01) {
-                numeroJan++;
-            }
-            if (mes == 02) {
-                numeroFev++;
-            }
-            if (mes == 03) {
-                numeroMar++;
-            }
-            if (mes == 04) {
-                numeroAbr++;
-            }
-            if (mes == 05) {
-                numeroMai++;
-            }
-            if (mes == 06) {
-                numeroJun++;
-            }
-            if (mes == 07) {
-                numeroJul++;
-            }
-            if (mes == 08) {
-                numeroAgo++;
-            }
-            if (mes == 09) {
-                numeroSet++;
-            }
-            if (mes == 10) {
-                numeroOut++;
-            }
-            if (mes == 11) {
-                numeroNov++;
-            }
-            if (mes == 12) {
-                numeroDez++;
-            }
-        }
+
+                    numeroJan += parseInt(objetoJSON.valor);
+                }
+                if (mes == 02) {
+                    numeroFev += parseInt(objetoJSON.valor);
+                }
+                if (mes == 03) {
+                    numeroMar = parseInt(objetoJSON.valor);
+                }
+                if (mes == 04) {
+                    // alert(numeroAbr);
+                    //  alert(objetoJSON.valor);
+                    numeroAbr += parseInt(objetoJSON.valor);
+                }
+                if (mes == 05) {
+                    numeroMai += parseInt(objetoJSON.valor);
+                }
+                if (mes == 06) {
+                    numeroJun += parseInt(objetoJSON.valor);
+                }
+                if (mes == 07) {
+                    numeroJul += parseInt(objetoJSON.valor);
+                }
+                if (mes == 08) {
+                    numeroAgo += parseInt(objetoJSON.valor);
+                }
+                if (mes == 09) {
+                    numeroSet += parseInt(objetoJSON.valor);
+                    //alert(numeroSet);
+                }
+                if (mes == 10) {
+                    numeroOut += parseInt(objetoJSON.valor);
+                }
+                if (mes == 11) {
+                    numeroNov += parseInt(objetoJSON.valor);
+                }
+                if (mes == 12) {
+                    numeroDez += parseInt(objetoJSON.valor);
+                }
+        }}
     }
 
     var labels = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];

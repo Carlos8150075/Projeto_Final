@@ -28,6 +28,7 @@ and open the template in the editor.
         <script src="assets/js/graficos_gerais_barras.js" type="text/javascript"></script>
         <script src="assets/js/graficos_gerais_circular.js" type="text/javascript"></script>
         <script src="assets/js/graficos_gerais_linhas.js" type="text/javascript"></script>
+        <script src="assets/js/graficos_testes.js" type="text/javascript"></script>
     </head>
 </head>
 <body>
