@@ -24,16 +24,14 @@ if (empty($_SESSION['user'])) {
         <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Custom styles for this template-->
         <link href="assets/css/sb-admin.css" rel="stylesheet">
-        <script src="assets/js/table_utilities.js" type="text/javascript"></script>
-        <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
+        <script src="assets/js/table_registos_admin.js" type="text/javascript"></script>
        
     </head>
 </head>
 <body>
     <?php
-    include_once './assets/templates/header.php';
-    include_once './assets/templates/tabelas/utilities_table.php';
-    //include_once './assets/templates/tabelas/testes.php';
+    include_once './assets/templates/header_admin.php';
+    include_once './assets/templates/tabelas/registos_table_admin.php';
     ?>
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>

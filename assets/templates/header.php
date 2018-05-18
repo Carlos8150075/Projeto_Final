@@ -3,9 +3,8 @@ include_once 'assets/DatabaseConnection/DatabaseConnection.php';
 $db = new DatabaseConnection();
 // $user_logado = $db->getUser();
 
-error_reporting(E_ALL ^ E_NOTICE); 
+error_reporting(E_ALL ^ E_NOTICE);
 session_start();
-
 ?>
 
 
@@ -80,14 +79,14 @@ session_start();
 
                 <script>
                     function myFunction() {
-                        
-                        
-                       var utilitie= event.target.innerHTML;
-                       var utilityID=event.target.getAttribute('value');
-                       
-                       localStorage.setItem("utilitie",utilitie);
-                       localStorage.setItem("utilityID",utilityID);
-                       
+
+
+                        var utilitie = event.target.innerHTML;
+                        var utilityID = event.target.getAttribute('value');
+
+                        localStorage.setItem("utilitie", utilitie);
+                        localStorage.setItem("utilityID", utilityID);
+
                     }
                 </script>
             </li>
@@ -159,25 +158,27 @@ session_start();
             </li>
 
             <li class="welcome text-secondary">
-                Bem-vindo, <li id="utilizador" class="welcome text-secondary"><?php echo $_SESSION['user']?></li>
+                Bem-vindo, <li id="utilizador" class="welcome text-secondary"><?php echo $_SESSION['user'] ?></li>
             </li>
-              <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle mr-lg-2 text-secondary" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-fw fas fa-cogs "></i>
-                    
+
                 </a>
                 <div class="dropdown-menu bg-light" aria-labelledby="messagesDropdown">
-                    
-                    
+
+
                     <a class="dropdown-item" href="perfil.php">
-                        
-                        <div class="dropdown-message">Perfil</div>
+
+
+                        <div class="dropdown-message"><i class="fa far fa-user" ></i> 	&nbsp; Perfil</div>
+
                     </a><div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="perfil.php">
-                        
-                        <div class="dropdown-message ">Definiçoes</div>
+
+                        <div class="dropdown-message ">  <i class="fa fa-fw fas fa-cogs "></i>&nbsp;Definições</div>
                     </a>
-                   
+
 
                 </div>
             </li>

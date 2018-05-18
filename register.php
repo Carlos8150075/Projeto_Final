@@ -4,14 +4,11 @@ $registo = false;
 include_once 'assets/DatabaseConnection/DatabaseConnection.php';
 
 require_once __DIR__ . '/Config.php';
-//require_once Config::getApplicationServicesPath() . 'RemenberMeService.php';
+
 require_once Config::getApplicationValidatorPath() . 'validateUsers.php';
 
 
-//printf($_SERVER['REQUEST_METHOD'] == 'POST');
-//printf($_SERVER['REQUEST_METHOD']);
 
-//echo 'inicio';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // echo "entrei";
     $array = filter_input_array(INPUT_POST);

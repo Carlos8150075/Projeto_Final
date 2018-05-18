@@ -7,7 +7,13 @@ require_once __DIR__ . '/Config.php';
 //require_once Config::getApplicationServicesPath() . 'RemenberMeService.php';
 require_once Config::getApplicationValidatorPath() . 'validateUsers.php';
 
+
 session_start();
+
+if (empty($_SESSION['user'])) {
+    header("Location: login.php");
+}
+
 
 $utilizador = $_SESSION['user'];
 
@@ -23,7 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ambiente = $array['ambiente'];
     $id = $_SESSION['id'];
     // $_SESSION['id']= DatabaseConnection::getUserByEmail($utilizador);
-
+    if(empty($ambiente)){
+        echo 'Atençao!!!!';
+    }
     DatabaseConnection::addUtility($ambiente, $utility, $metric, $id);
 
     //$errors = ValidateUser::validadeSignin($email, $password, $password2, $username, $surname);
@@ -54,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Custom styles for this template-->
         <link href="assets/css/sb-admin.css" rel="stylesheet">
-        <script src="assets/js/gerate_addutilitie.js" type="text/javascript"></script>
+        <script src="assets/js/generate_ambientes.js" type="text/javascript"></script>
     </head>
 </head>
 <body>
@@ -77,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="form-group">
                         <label for="exampleInputEmail1">Ambiente</label>
                         <select name="ambiente" aria-controls="dataTable" class="form-control form-control-sm" id="addAmbiente">
-                            <option value="1">Casa</option>
+                            
                         </select>
                     </div>
                     

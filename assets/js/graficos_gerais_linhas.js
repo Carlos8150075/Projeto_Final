@@ -24,10 +24,6 @@ function remove() {
     clean();
 }
 
-function makeMMTable() {
-    makeTable(document.getElementById('monthFrom').value, document.getElementById('monthTo').value,
-            document.getElementById('yearFrom').value, document.getElementById('yearTo').value);
-}
 
 function changeTable() {
     if (tableFormed) {

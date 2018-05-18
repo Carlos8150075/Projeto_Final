@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+session_start();
+
+if (empty($_SESSION['user'])) {
+    header("Location: login.php");
+}
+?>
 <html>
     <head>
 
@@ -22,7 +23,7 @@ and open the template in the editor.
         <!-- Custom fonts for this template-->
         <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Custom styles for this template-->
-        
+
         <link href="assets/css/sb-admin.css" rel="stylesheet">
         <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
         <script src="assets/js/graficos_gerais_barras.js" type="text/javascript"></script>
@@ -46,6 +47,6 @@ and open the template in the editor.
     <!-- Custom scripts for this page-->
     <script src="assets/vendor/chart.js/Chart.min.js"></script>
     <!-- Custom scripts for this page-->
-    
+
 </body>
 </html>

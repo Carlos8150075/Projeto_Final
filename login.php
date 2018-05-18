@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //echo 'entrei2';
         $_SESSION['user'] = $username;
         $_SESSION['nome'] = DatabaseConnection::getNomeByEmail($username);
-        $_SESSION['id'] = DatabaseConnection::getUserByEmail($username);
+        $_SESSION['id'] = DatabaseConnection::getUserByEmail($username);     
+        $_SESSION['level'] = DatabaseConnection::getLevelByEmail($username);
         
        // echo $_SESSION['nome'];
 

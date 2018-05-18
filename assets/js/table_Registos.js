@@ -58,8 +58,6 @@ function makeRegistosTable(registosArray) {
 
                 var tdId = document.createElement("td");
                 tdId.innerHTML = registosArray[i].id;
-                var tdUser = document.createElement("td");
-                tdUser.innerHTML = registosArray[i].user;
                 var tdutility = document.createElement("td");
                 tdutility.innerHTML = registosArray[i].utility;
                 var tdValor = document.createElement("td");
@@ -68,7 +66,6 @@ function makeRegistosTable(registosArray) {
                 tdDate.innerHTML = registosArray[i].date;
 
                 tr.appendChild(tdId);
-                tr.appendChild(tdUser);
                 
                 tr.appendChild(tdutility);
                 tr.appendChild(tdValor);

@@ -9,6 +9,13 @@ require_once Config::getApplicationValidatorPath() . 'validateUsers.php';
 
 session_start();
 
+session_start();
+
+if (empty($_SESSION['user'])) {
+    header("Location: login.php");
+}
+
+
 $utilizador = $_SESSION['user'];
 
 

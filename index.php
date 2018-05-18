@@ -5,6 +5,14 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 if (empty($_SESSION['user'])) {
     header("Location: login.php");
+}   
+
+$level=$_SESSION['level'];
+
+
+
+if ($level==2){
+    header("Location: Administrador.php");
 }
     $id = $_SESSION['id'];
 

@@ -1,11 +1,18 @@
 <?php 
 
+require_once 'assets/DatabaseConnection/DatabaseConnection.php';
+$db = new DatabaseConnection();
+
 session_start();
+
+//$userDeath = $db->getUsers(array("id" => $death['entity_id']))[0];
+
 error_reporting(E_ALL ^ E_NOTICE); 
 
 if (empty($_SESSION['user'])) {
     header("Location: login.php");
 }
+$user = $db->getUsers(array("id" => $_SESSION['id']))[0];
     $id = $_SESSION['id'];
 
 ?>
@@ -55,28 +62,31 @@ and open the template in the editor.
 <div class="content-wrapper" style="height: 100%"> 
     <div class="container-fluid" style="margin-top: 120px">
         <div class="card mb-3"  style="width: 66%; margin-left: 16.667%">
-            <div class="card card-header">
-                    <h3 class="panel-title"><?= $fam['name'];  ?></h3>
-            </div>
-            <div class="panel-body">
-                <table class="table table-user-information">
+            <div class="card-header">
+                <i class="fa fa-user" style="margin-left: 5px"></i>	&nbsp;Perfil</div>
+                
+            <div class="panel-body ">
+                <table class="table">
                     <tbody>
                         <tr>
-                            <td>ID</td>
+                            <td>ID :</td>
                             <td><?php echo $id ?></td>
                         </tr>
                         <tr>
-                            <td>Name</td>
-                            <td><?php echo $_SESSION['nome'];?></td>
-                            <td>Username</td>
-                            <td></td>
+                            <td>Name :</td>
+                            <td><?=  $user['name'];?></td>
+                            
                         </tr>
                         <tr>
-                            <td>Regiao</td>
-                            <td> Braga</td>
+                         <td>Username</td>
+                            <td><?=  $user['surname'] ;?></td>
                         </tr>
                         <tr>
-                            <td>Email</td>
+                            <td>Regiao :</td>
+                            <td> <?= $user['regiao']?></td>
+                        </tr>
+                        <tr>
+                            <td>Email :</td>
                             <td><?php echo $_SESSION['user'];?></td>
                         </tr>
                     </tbody>

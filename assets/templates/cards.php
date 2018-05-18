@@ -17,9 +17,9 @@
                 <div class="card-body-icon" style="zoom: 70%">
                 <i class="fa fa-fw fa-home"></i>
               </div>
-              <div class="mr-5">Casa</div>
+                <div class="mr-5" id="cardAmbiente">Casa</div>
             </div>
-            <a class="card-footer text-primary clearfix small z-1" href="#">
+            <a class="card-footer text-primary clearfix small z-1" id="cardhref">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>	

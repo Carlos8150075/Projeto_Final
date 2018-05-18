@@ -94,6 +94,39 @@ function makeMonthChartDeath2(year) {
     var utility = localStorage.utilityID;
 
 
+    var dia1 = 0;
+    var dia2 = 0;
+    var dia3 = 0;
+    var dia4 = 0;
+    var dia5 = 0;
+    var dia6 = 0;
+    var dia7 = 0;
+    var dia8 = 0;
+    var dia9 = 0;
+    var dia10 = 0;
+    var dia11 = 0;
+    var dia12 = 0;
+    var dia13 = 0;
+    var dia14 = 0;
+    var dia15 = 0;
+    var dia16 = 0;
+    var dia17 = 0;
+    var dia18 = 0;
+    var dia19 = 0;
+    var dia20 = 0;
+    var dia21 = 0;
+    var dia22 = 0;
+    var dia23 = 0;
+    var dia24 = 0;
+    var dia25 = 0;
+    var dia26 = 0;
+    var dia27 = 0;
+    var dia28 = 0;
+    var dia29 = 0;
+    var dia30 = 0;
+    var dia31 = 0;
+
+
     var obj = JSON.parse(jsonString);
     var array = obj;
     var labels = [];
@@ -101,21 +134,141 @@ function makeMonthChartDeath2(year) {
     var count = 0;
     for (var i = 0; i < array.length; i++) {
         var objetoJSON = array[i];
-        var date = objetoJSON.date.split('-');
+        //var date = objetoJSON.date.split('-');
         if (objetoJSON.id_user == utilizador && objetoJSON.id_utility == utility) {
-            if (date[0] == year) {
-                if (labels.includes(getMonth(date[1]))) {
-                    data[labels.indexOf(getMonth(date[1]))]++;
-                    
-                } else {
-                    labels[count] = getMonth(date[1]);
-                    data[count] = 1;
-                    count++;
+            if (objetoJSON.date != null) {
+                var dia= objetoJSON.date.split('-')[2];
+
+                if (dia == 01) {
+
+                    dia1 += parseInt(objetoJSON.valor);
                 }
+                if (dia == 02) {
+
+                    dia2 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 03) {
+
+                    dia3 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 04) {
+
+                    dia4 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 05) {
+
+                    dia5 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 06) {
+
+                    dia6 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 07) {
+
+                    dia7 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 08) {
+
+                    dia8 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 09) {
+
+                    dia9 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 10) {
+
+                    dia10 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 11) {
+
+                    dia11 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 12) {
+
+                    dia12 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 13) {
+
+                    dia13 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 14) {
+
+                    dia14 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 15) {
+
+                    dia15 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 16) {
+
+                    dia16 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 17) {
+
+                    dia17 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 18) {
+
+                    dia18 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 19) {
+
+                    dia19 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 20) {
+
+                    dia20 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 21) {
+
+                    dia21 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 22) {
+
+                    dia22 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 23) {
+
+                    dia23 += parseInt(objetoJSON.valor);
+                }
+                if (dia24 == 24) {
+
+                    dia24 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 25) {
+
+                    dia25 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 26) {
+
+                    dia26 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 27) {
+
+                    dia27 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 28) {
+
+                    dia28 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 29) {
+
+                    dia29 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 30) {
+
+                    dia30 += parseInt(objetoJSON.valor);
+                }
+                if (dia == 31) {
+
+                    dia31 += parseInt(objetoJSON.valor);
+                }
+
+
+
             }
         }
     }
-
     // var sessionValue = '<%=Session["user"]%>';
     //alert(sessionValue);
 
@@ -125,14 +278,19 @@ function makeMonthChartDeath2(year) {
 
     var myBarChart = new Chart(ctx, {
         type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                    label: "Custo",
-                    data: data,
-                    backgroundColor: '#3399ff'
-                }]
-        },
+        data:
+                {
+                    labels: ["1", "2", "3", "4", "5", "6", "7",
+                        "8", "9", "10", "11", "12","13","14","15", "16", "17", "18", "19","20","21","22"
+                    , "23", "24", "25", "26","27","28","29","30","31"],
+                    datasets: [{
+                            data: [dia1, dia2, dia3,dia4,dia5,dia6,dia7,dia8,dia9,dia10,dia11,dia12,dia13,dia14,dia15
+                                ,dia16,dia17,dia18,dia19,dia20,dia21,dia22,dia23,dia24,dia25
+                                ,dia26,dia27,dia28,dia29,dia30,dia31],
+                            backgroundColor: '#3399ff'
+
+                        }]
+                },
         options: {
             scales: {
                 yAxes: [{
@@ -155,7 +313,7 @@ function makeMonthChartDeath2(year) {
     var but = document.createElement("button");
     but.setAttribute('id', 'resetGraph');
     but.setAttribute('class', 'btn btn-black');
-    but.setAttribute('style', 'margin-left: 300px;');
+    but.setAttribute('style', 'margin-left: 700px;');
     but.innerHTML = "Back";
 
     but.addEventListener('click', function () {
@@ -175,7 +333,7 @@ function initialGraph2() {
     var jsonString = getJsonRegistos();
     //alert(localStorage.utilitie);
     //alert(localStorage.utilizadorID);
-    
+
 
 
     var utilizador = localStorage.utilizadorID;
@@ -187,7 +345,7 @@ function initialGraph2() {
     var labels = [];
     var data = [];
     var count = 0;
-    
+
     var numeroJan = 0;
     var numeroFev = 0;
     var numeroMar = 0;
@@ -206,7 +364,7 @@ function initialGraph2() {
         var objetoJSON = array[i];
         var date = objetoJSON.date.split('-');
         if (objetoJSON.id_user == utilizador && objetoJSON.id_utility == utility) {
-              if (objetoJSON.date != null) {
+            if (objetoJSON.date != null) {
                 var mes = objetoJSON.date.substring(5, 7);
 
                 if (mes == 01) {

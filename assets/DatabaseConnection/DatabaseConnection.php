@@ -126,6 +126,20 @@ class DatabaseConnection {
 
         return $data[0]['id'];
     }
+    
+    
+     public static function getLevelByEmail($email) {
+
+        $db = self::getDb();
+
+        $query = ("SELECT * FROM users WHERE email='$email'");
+        $data = $db->exec($query)->fetchAll();
+
+
+        return $data[0]['level'];
+    }
+    
+    
 
     public static function getNomeByEmail($email) {
 
@@ -206,7 +220,7 @@ class DatabaseConnection {
      * @return type
      */
     public static function getAmbientes($where) {
-        return self::getDb()->select('ambientes', array('id', 'id_utility', 'name', 'type'), $where);
+        return self::getDb()->select('ambientes', array('id', 'name','id_user' ,'principal'), $where);
     }
 
     /**

@@ -11,16 +11,17 @@
             <div class="card-body">
 
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="dataTableadmin" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>Nº do Registo</th>
+                                <th>Consumidor</th>
                                 <th>Utility</th>
                                 <th>Valor</th>
                                 <th>Data</th>
                             </tr>
                         </thead>
-                        <tbody id="myTable">
+                        <tbody id="myTableadmin">
                         </tbody>
                     </table>
                 </div>
