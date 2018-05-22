@@ -12,8 +12,9 @@ session_start();
     <a class="navbar-brand" href="index.php"><img src="assets/images/home-icon.png" style="width: 30px;"/></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
+        
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div class="collapse navbar-collapse" id="navbarResponsive" >
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="index.php">
@@ -47,18 +48,18 @@ session_start();
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fas fa-cogs"></i>
-                    <span class="nav-link-text">Gestao de Utilities</span>
+                    <span class="nav-link-text">Gestao de Utilizadores</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseMulti">
 
                     <li>
                         <a href="add_utility.php">
-                            <i class="fa smaller fa-fw fa-book"></i> Adicionar Utility</a>
+                            <i class="fa smaller fa-fw fa-book"></i>Remover Utilizador</a>
                     </li>
 
                     <li>
-                        <a href="Utilities.php">
-                            <i class="fa smaller fa-fw fa-book"></i> Registo das utilities</a>
+                        <a href="Utilizadores_table.php">
+                            <i class="fa smaller fa-fw fa-book"></i> Tabela dos utilizadores</a>
                     </li>
 
                 </ul>
@@ -73,12 +74,6 @@ session_start();
                 </a>
             </li>
 
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="testes">
-                <a class="nav-link" href="testes.php">
-                    <i class="fa fa-fw far fa-globe"></i>
-                    <span class="nav-link-text">Testes</span>
-                </a>
-            </li>
 
         </ul>
         <ul class="navbar-nav sidenav-toggler">
@@ -92,45 +87,10 @@ session_start();
             <li class="welcome">
 
             </li>
+            
+            <h1 style="font-size: 30px ; padding-right: 150px"  >Administrador</h1>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-envelope"></i>
-                    <span class="d-lg-none">Messages
-                        <span class="badge badge-pill badge-primary">12 New</span>
-                    </span>
-                    <span class="indicator text-primary d-none d-lg-block">
-                        <i class="fa fa-fw fa-circle"></i>
-                    </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="messagesDropdown">
-                    <h6 class="dropdown-header">New Messages:</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <strong>Pessoa</strong>
-                        <span class="small float-right text-muted">11:21 AM</span>
-                        <div class="dropdown-message small">Hiii there! ..... </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item small" href="#">View all messages</a>
-                </div>
-            </li>
-
-
-            <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Search for...">
-                        <span class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            </li>
+            
 
             <li class="welcome text-secondary">
                 Bem-vindo, <li id="utilizador" class="welcome text-secondary"><?php echo $_SESSION['user'] ?></li>

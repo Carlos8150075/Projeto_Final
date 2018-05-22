@@ -421,7 +421,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 .card-body-icon {
   position: absolute;
   z-index: 0;
-  top: -15px;
+  top: -34px;
   right: 12px;
   font-size: 5rem;
 }

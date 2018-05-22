@@ -1,3 +1,9 @@
+<?php
+    include_once 'assets/DatabaseConnection/DatabaseConnection.php';
+    $db = new DatabaseConnection();
+    
+    $array = $db->getUtilities("");
+?>
 <div class="content-wrapper" style="padding-top: 80px;">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
@@ -17,11 +23,12 @@
                     function myFunction3() {
 
                         var ambienteID = event.target.getAttribute('value');
+                        var ambiente= event.target.getAttribute('id');
                         if(ambienteID==null){
                             alert('erro');
                            
                         }
-         
+                        localStorage.setItem("ambiente",ambiente)
                         localStorage.setItem("ambienteID", ambienteID);
 
                     }

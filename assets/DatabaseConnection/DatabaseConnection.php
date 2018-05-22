@@ -104,6 +104,15 @@ class DatabaseConnection {
         //  }
     }
     
+    public static function deleteUser($id) {
+
+        $db = self::getDb();
+        $db->delete('users', array('id' => $id));
+        //self::resetDB();
+        //  }
+    }
+    
+    
      public static function addAmbientesIniciais($id_user) {
          $nome1="Ambiente 1";
          $nome2="Ambiente 2";
@@ -132,6 +141,31 @@ class DatabaseConnection {
         //self::resetDB();
         //  }
     }
+    
+    public static function encontrarAmbiente( $name, $user) {
+
+         $db = self::getDb();
+
+        $query = ("SELECT * FROM ambientes WHERE name='$name' AND $user");
+        $data = $db->exec($query)->fetchAll();
+
+
+        return $data[0]['id'];
+    }
+    
+    public static function atualizarAmbiente( $id) {
+
+         $db = self::getDb();
+
+        $query = ("SELECT * FROM ambientes WHERE name='$id'");
+        $data = $db->exec($query)->fetchAll();
+
+
+        return $data[0]['id'];
+    }
+    
+    
+    
 
     public static function getUserByEmail($email) {
 
