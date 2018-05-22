@@ -65,9 +65,6 @@ var utilizador=localStorage.utilizadorID;
         }}
    // }
     
-    
-
-
 }
 
 

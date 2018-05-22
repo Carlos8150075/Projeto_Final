@@ -7,7 +7,7 @@ require_once __DIR__ . '/Config.php';
 //require_once Config::getApplicationServicesPath() . 'RemenberMeService.php';
 require_once Config::getApplicationValidatorPath() . 'validateUsers.php';
 
-session_start();
+
 
 session_start();
 
@@ -67,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- Custom styles for this template-->
         <link href="assets/css/sb-admin.css" rel="stylesheet">
         <script src="assets/js/gerate_addutilitie.js" type="text/javascript"></script>
+        <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
     </head>
 </head>
 <body>

@@ -1,84 +1,31 @@
 <div class="content-wrapper" style="padding-top: 80px;">
-<div class="container-fluid">
-      <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Ambientes</a>
-        </li>
-       
-      </ol>
-      
-      <hr>
-      <!-- Icon Cards-->
-      <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-white o-hidden h-100 fundo" >
-            <div class="card-body fundo">
-                <div class="card-body-icon" style="zoom: 70%">
-                <i class="fa fa-fw fa-home"></i>
-              </div>
-                <div class="mr-5" id="cardAmbiente">Casa</div>
-            </div>
-            <a class="card-footer text-primary clearfix small z-1" id="cardhref">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>	
-              </span>
-            </a>
-          </div>
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Ambientes</a>
+            </li>
+
+        </ol>
+
+        <hr>
+        <!-- Icon Cards-->
+        <div class="row" id="cards">
+
         </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-white o-hidden h-100">
-            <div class="card-body fundo">
-              <div class="card-body-icon " style="zoom: 75%">
-                <i class="fa fa-fw fa-tint "></i>
-              </div>
-              <div class="mr-5">Compras</div>
-            </div>
-            <a class="card-footer text-primary clearfix small  z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3" >
-            <div class="card text-white  o-hidden h-100" >
-            <div class="card-body fundo" >
-              <div class="card-body-icon" style="zoom: 65%" >
-                <i class="fa fa-fw fa fa-car"></i>
-              </div>
-              <div class="mr-5">Carro</div>
-            </div>
-            <a class="card-footer text-primary clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-white o-hidden h-100">
-            <div class="card-body fundo ">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-free-code-camp smaller"></i>
-              </div>
-              <div class="mr-5">Outros...</div>
-            </div>
-            <a class="card-footer text-primary  clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-          
-      </div>
-      
-      
+<script>
+                    function myFunction3() {
+
+                        var ambienteID = event.target.getAttribute('value');
+                        if(ambienteID==null){
+                            alert('erro');
+                           
+                        }
+         
+                        localStorage.setItem("ambienteID", ambienteID);
+
+                    }
+                </script>
+
     </div>
-    
-    
+ 

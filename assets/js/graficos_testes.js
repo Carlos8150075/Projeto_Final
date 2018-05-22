@@ -84,7 +84,7 @@ function getMonth(month) {
 
 
 
-function makeMonthChartDeath2(year) {
+function makeMonthChartDeath2(mes) {
     var ctx = document.getElementById("barras_utilities2teste");
 // String de teste
     var jsonString = getJsonRegistos();
@@ -126,6 +126,7 @@ function makeMonthChartDeath2(year) {
     var dia30 = 0;
     var dia31 = 0;
 
+   // alert(mes);
 
     var obj = JSON.parse(jsonString);
     var array = obj;
@@ -137,135 +138,138 @@ function makeMonthChartDeath2(year) {
         //var date = objetoJSON.date.split('-');
         if (objetoJSON.id_user == utilizador && objetoJSON.id_utility == utility) {
             if (objetoJSON.date != null) {
-                var dia= objetoJSON.date.split('-')[2];
+                //alert(objetoJSON.date.split('-')[3]);
+                if (objetoJSON.date.split('-')[1] == mes) {
 
-                if (dia == 01) {
+                    var dia = objetoJSON.date.split('-')[2];
 
-                    dia1 += parseInt(objetoJSON.valor);
+                    if (dia == 01) {
+
+                        dia1 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 02) {
+
+                        dia2 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 03) {
+
+                        dia3 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 04) {
+
+                        dia4 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 05) {
+
+                        dia5 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 06) {
+
+                        dia6 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 07) {
+
+                        dia7 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 08) {
+
+                        dia8 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 09) {
+
+                        dia9 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 10) {
+
+                        dia10 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 11) {
+
+                        dia11 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 12) {
+
+                        dia12 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 13) {
+
+                        dia13 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 14) {
+
+                        dia14 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 15) {
+
+                        dia15 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 16) {
+
+                        dia16 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 17) {
+
+                        dia17 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 18) {
+
+                        dia18 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 19) {
+
+                        dia19 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 20) {
+
+                        dia20 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 21) {
+
+                        dia21 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 22) {
+
+                        dia22 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 23) {
+
+                        dia23 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia24 == 24) {
+
+                        dia24 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 25) {
+
+                        dia25 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 26) {
+
+                        dia26 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 27) {
+
+                        dia27 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 28) {
+
+                        dia28 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 29) {
+
+                        dia29 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 30) {
+
+                        dia30 += parseInt(objetoJSON.valor);
+                    }
+                    if (dia == 31) {
+
+                        dia31 += parseInt(objetoJSON.valor);
+                    }
+
+
                 }
-                if (dia == 02) {
-
-                    dia2 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 03) {
-
-                    dia3 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 04) {
-
-                    dia4 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 05) {
-
-                    dia5 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 06) {
-
-                    dia6 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 07) {
-
-                    dia7 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 08) {
-
-                    dia8 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 09) {
-
-                    dia9 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 10) {
-
-                    dia10 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 11) {
-
-                    dia11 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 12) {
-
-                    dia12 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 13) {
-
-                    dia13 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 14) {
-
-                    dia14 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 15) {
-
-                    dia15 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 16) {
-
-                    dia16 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 17) {
-
-                    dia17 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 18) {
-
-                    dia18 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 19) {
-
-                    dia19 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 20) {
-
-                    dia20 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 21) {
-
-                    dia21 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 22) {
-
-                    dia22 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 23) {
-
-                    dia23 += parseInt(objetoJSON.valor);
-                }
-                if (dia24 == 24) {
-
-                    dia24 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 25) {
-
-                    dia25 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 26) {
-
-                    dia26 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 27) {
-
-                    dia27 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 28) {
-
-                    dia28 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 29) {
-
-                    dia29 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 30) {
-
-                    dia30 += parseInt(objetoJSON.valor);
-                }
-                if (dia == 31) {
-
-                    dia31 += parseInt(objetoJSON.valor);
-                }
-
-
-
             }
         }
     }
@@ -281,12 +285,12 @@ function makeMonthChartDeath2(year) {
         data:
                 {
                     labels: ["1", "2", "3", "4", "5", "6", "7",
-                        "8", "9", "10", "11", "12","13","14","15", "16", "17", "18", "19","20","21","22"
-                    , "23", "24", "25", "26","27","28","29","30","31"],
+                        "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"
+                                , "23", "24", "25", "26", "27", "28", "29", "30", "31"],
                     datasets: [{
-                            data: [dia1, dia2, dia3,dia4,dia5,dia6,dia7,dia8,dia9,dia10,dia11,dia12,dia13,dia14,dia15
-                                ,dia16,dia17,dia18,dia19,dia20,dia21,dia22,dia23,dia24,dia25
-                                ,dia26,dia27,dia28,dia29,dia30,dia31],
+                            data: [dia1, dia2, dia3, dia4, dia5, dia6, dia7, dia8, dia9, dia10, dia11, dia12, dia13, dia14, dia15
+                                        , dia16, dia17, dia18, dia19, dia20, dia21, dia22, dia23, dia24, dia25
+                                        , dia26, dia27, dia28, dia29, dia30, dia31],
                             backgroundColor: '#3399ff'
 
                         }]
@@ -342,7 +346,7 @@ function initialGraph2() {
 
     var obj = JSON.parse(jsonString);
     var array = obj;
-    var labels = [];
+   
     var data = [];
     var count = 0;
 
@@ -358,13 +362,20 @@ function initialGraph2() {
     var numeroOut = 0;
     var numeroNov = 0;
     var numeroDez = 0;
+    
+    var 
+    labels=[numeroJan, numeroFev, numeroMar, numeroAbr, numeroMai, numeroJun,
+                        numeroJul, numeroAgo, numeroSet, numeroOut, numeroNov, numeroDez];
 
     for (var i = 0; i < array.length; i++) {
-
+        
         var objetoJSON = array[i];
         var date = objetoJSON.date.split('-');
+        
+        
         if (objetoJSON.id_user == utilizador && objetoJSON.id_utility == utility) {
             if (objetoJSON.date != null) {
+
                 var mes = objetoJSON.date.substring(5, 7);
 
                 if (mes == 01) {
@@ -410,6 +421,7 @@ function initialGraph2() {
             }
         }
     }
+    
 
     var color = ['#e2f5fa', '#b4e3ef', '#99d9ea', '#00a2e8', '#3f48cc',
         '#7092be', '#afc1da', '#c8d5e6', '#c0bae2', '#9b92d1', '#6a5bbb', '#7047a7'];
@@ -446,7 +458,8 @@ function initialGraph2() {
                 if (element.length > 0) {
 
                     myBarChart.destroy();
-                    makeMonthChartDeath2(labels[element[0]._index]);
+                    makeMonthChartDeath2((element[0]._index)+1);
+                 //   alert((element[0]._index)+1);
                 }
             }
 

@@ -206,7 +206,6 @@ function initialGraph() {
     var color = ['#e2f5fa', '#b4e3ef', '#99d9ea', '#00a2e8', '#3f48cc',
         '#7092be', '#afc1da', '#c8d5e6', '#c0bae2', '#9b92d1', '#6a5bbb', '#7047a7'];
 
-
     var myBarChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -237,6 +236,8 @@ function initialGraph() {
 
                     myBarChart.destroy();
                     makeMonthChartDeath(labels[element[0]._index]);
+                    
+                    
                 }
             }
 

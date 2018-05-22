@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($errors)) {
         //echo "sem erros";
         DatabaseConnection::setUsers($username, $surname, $email, $password, $regiao);
+        $idInicio = DatabaseConnection::getUserByEmail($email);
+        DatabaseConnection::addAmbientesIniciais($idInicio);
         header('Location: index.php');
     }
 }

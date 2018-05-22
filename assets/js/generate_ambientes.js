@@ -11,12 +11,11 @@ function getJsonAmbientes(){
 
 class Ambientes {
 
-    constructor(id,  name, id_user, principal) {
+    constructor(id,  name, id_user) {
 
         this.id = id;
         this.id_user = id_user;
         this.name = name;
-        this.principal = principal;
 
     }
 
@@ -32,7 +31,7 @@ function setArray() {
     var array = obj;
     for (var i = 0; i < array.length; i++) {
         var objetoJSON = array[i];
-        arrayPrincipal[i] = new Ambientes(objetoJSON.id, objetoJSON.name, objetoJSON.id_user, objetoJSON.principal);
+        arrayPrincipal[i] = new Ambientes(objetoJSON.id, objetoJSON.name, objetoJSON.id_user);
     }
 }
 

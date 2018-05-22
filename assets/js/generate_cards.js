@@ -1,4 +1,4 @@
-function getJsonAmbientes(){
+function getJsonAmbientes() {
     $.ajaxSetup({async: false});
     var json = "";
     $.post("assets/Services/getAmbientesService.php",
@@ -11,70 +11,85 @@ function getJsonAmbientes(){
 
 class Ambiente {
 
-    constructor(id, name,principal) {
+    constructor(id, name, id_user) {
 
         this.id = id;
         this.name = name;
-        this.user=principal;
+        this.id_user = id_user;
 
     }
 
 }
 
-var arrayPrincipal = [];
+var arrayPrincipalb = [];
 
 
-function setArray() {
+function setArray2() {
     //Get JSON
     var jsonString = getJsonAmbientes();
     var obj = JSON.parse(jsonString);
     var array = obj;
     for (var i = 0; i < array.length; i++) {
         var objetoJSON = array[i];
-        arrayPrincipal[i] = new Ambiente(objetoJSON.id, objetoJSON.name, objetoJSON.principal);
+        arrayPrincipalb[i] = new Ambiente(objetoJSON.id, objetoJSON.name, objetoJSON.id_user);
     }
 }
 
 
-function makeNavUtilities(ambientesArray) {
 
-var utilizador=localStorage.utilizadorID;
+
+function makeCardsAmbientes(ambientesArray) {
+
+    var utilizador = localStorage.utilizadorID;
     if (ambientesArray == 0) {
-        var varUL = document.getElementById("collapseExamplePages");
+        var varUL = document.getElementById("cards");
         varUL.innerHTML = "Não existem resultados!";
     } else {
         for (var i = 0; i < ambientesArray.length; i++) {
-            if (ambientesArray[i].user == utilizador) {
-       //     var li = document.createElement("LI");
+            if (ambientesArray[i].id_user == utilizador) {
+                var div1 = document.createElement("div");
+                div1.setAttribute('class', 'col-xl-3 col-sm-6 mb-3')
+                var div2 = document.createElement("div");
+                div2.setAttribute('class', 'card text-white  bg-white o-hidden h-100 fundo')
+                var div3 = document.createElement("div");
+                div3.setAttribute('class', 'card-body fundo');
+                div3.innerHTML = ambientesArray[i].name;
+                var link = document.createElement("a");
+                link.setAttribute('class', 'card-footer text-primary clearfix small z-1');
+                link.setAttribute('href', 'Ambientes.php');
+                link.setAttribute('value', ambientesArray[i].id);
+                
+               
+                var span1 = document.createElement("SPAN");
+                var span2 = document.createElement("SPAN");
+                span1.setAttribute('class', 'float-left');
+                span1.innerHTML = "View Details";
+                span2.setAttribute('class', 'float-right');
+                link.setAttribute('onclick','myFunction3()');
+                link.appendChild(span1);
+                link.appendChild(span2);
 
-            var tdName = document.createElement("a");
-            tdName.innerHTML = ambientesArray[i].name;
-            tdName.setAttribute('href', 'Graficos_utilities.php');
-            tdName.setAttribute('id', 'teste');
-            tdName.setAttribute('value', ambientesArray[i].id);
-            tdName.setAttribute('onclick','myFunction()');
-            
-            li.appendChild(tdName);
+                div1.appendChild(div2);
+                div2.appendChild(div3);
+                div2.appendChild(link);
+                var varUL = document.getElementById("cards");
 
-            var varUL = document.getElementById("collapseExamplePages");
+                varUL.appendChild(div1);
+            }
+        }
+    }
 
-            varUL.appendChild(li);
-               }
-        }}
-   // }
-    
-    
 
 
 }
 
 
-function initEvents() {
+function initEvents2() {
 
-    setArray();
-    makeNavUtilities(arrayPrincipal);
-    
-    
+    setArray2();
+    makeCardsAmbientes(arrayPrincipalb);
+
+
 }
 
-document.addEventListener('DOMContentLoaded', initEvents);
+document.addEventListener('DOMContentLoaded', initEvents2);

@@ -22,6 +22,45 @@ class Registo {
 
 }
 
+function getJsonUtilities(){
+    $.ajaxSetup({async: false});
+    var json = "";
+    $.post("assets/Services/getUtilitiesService.php",
+            {},
+            function (data) {
+                json = data;
+            });
+    return json;
+}
+
+class Utilities {
+
+    constructor(id, ambiente, name, metric,user) {
+
+        this.id = id;
+        this.ambiente = ambiente;
+        this.name = name;
+        this.metric = metric;
+        this.user=user;
+
+    }
+
+}
+
+var a = [];
+
+
+function setArray2() {
+    //Get JSON
+    var jsonString = getJsonUtilities();
+    var obj = JSON.parse(jsonString);
+    var array = obj;
+    for (var i = 0; i < array.length; i++) {
+        var objetoJSON = array[i];
+        a[i] = new Utilities(objetoJSON.id, objetoJSON.id_ambiente, objetoJSON.name, objetoJSON.metric,objetoJSON.id_user);
+    }
+}
+
 var b = [];
 
 
@@ -44,7 +83,7 @@ function getSearchFilter() {
 }
 
 
-function makeRegistosTable(registosArray) {
+function makeRegistosTable(utilitiesArray , registosArray) {
     clearTable()
     var utilizador= localStorage.utilizadorID;
 
@@ -53,22 +92,32 @@ function makeRegistosTable(registosArray) {
         tbody.innerHTML = "Não existem resultados!";
     } else {
         for (var i = 0; i < registosArray.length; i++) {
-        
+          
                 var tr = document.createElement("tr");
 
                 var tdId = document.createElement("td");
                 tdId.innerHTML = registosArray[i].id;
-                var tdUser = document.createElement("td");
-                tdUser.innerHTML = registosArray[i].user;
+                
+                var tdCons = document.createElement("td");
+                tdCons.innerHTML = registosArray[i].user;
+                
+                
+                 for (var j = 0; j < utilitiesArray.length; j++) {
+                     if(registosArray[i].utility==utilitiesArray[j].id){
+                        var utility=utilitiesArray[j].name;
+                     }
+                     
+                 }
+                
                 var tdutility = document.createElement("td");
-                tdutility.innerHTML = registosArray[i].utility;
+                tdutility.innerHTML = utility;
                 var tdValor = document.createElement("td");
                 tdValor.innerHTML = registosArray[i].valor;
                 var tdDate = document.createElement("td");
                 tdDate.innerHTML = registosArray[i].date;
 
                 tr.appendChild(tdId);
-                tr.appendChild(tdUser);
+                tr.appendChild(tdCons);
                 
                 tr.appendChild(tdutility);
                 tr.appendChild(tdValor);
@@ -94,11 +143,12 @@ function clear() {
     makeRegistosTable()(b);
 }
 
-function initEvents() {
+function initEvents2() {
 
     setArray();
+    setArray2();
 
-    makeRegistosTable(b);
+    makeRegistosTable(a,b);
 }
 
-document.addEventListener('DOMContentLoaded', initEvents);
+document.addEventListener('DOMContentLoaded', initEvents2);

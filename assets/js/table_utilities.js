@@ -37,13 +37,50 @@ function setArray() {
     }
 }
 
+function getJsonAmbientes() {
+    $.ajaxSetup({async: false});
+    var json = "";
+    $.post("assets/Services/getAmbientesService.php",
+            {},
+            function (data) {
+                json = data;
+            });
+    return json;
+}
+
+class Ambiente {
+
+    constructor(id, name, id_user) {
+
+        this.id = id;
+        this.name = name;
+        this.id_user = id_user;
+
+    }
+
+}
+
+var arrayPrincipalb = [];
+
+
+function setArray2() {
+    //Get JSON
+    var jsonString = getJsonAmbientes();
+    var obj = JSON.parse(jsonString);
+    var array = obj;
+    for (var i = 0; i < array.length; i++) {
+        var objetoJSON = array[i];
+        arrayPrincipalb[i] = new Ambiente(objetoJSON.id, objetoJSON.name, objetoJSON.id_user);
+    }
+}
+
 function getSearchFilter() {
     var input = document.getElementById("filterSearch").value;
     return input;
 }
 
 
-function makeUtilitiesTable(utilitiesArray) {
+function makeUtilitiesTable(utilitiesArray, ambientesarray) {
     clearTable()
 
     var utilizador = localStorage.utilizadorID;
@@ -59,7 +96,13 @@ function makeUtilitiesTable(utilitiesArray) {
                 var tdId = document.createElement("td");
                 tdId.innerHTML = utilitiesArray[i].id;
                 var tdAmbiente = document.createElement("td");
-                tdAmbiente.innerHTML = utilitiesArray[i].ambiente;
+                for (var j = 0; j < utilitiesArray.length; j++) {
+                     if(ambientesarray[i].id==utilitiesArray[j].ambiente){
+                        var ambiente=ambientesarray[j].name;
+                     }
+                     
+                 }
+                tdAmbiente.innerHTML = ambiente;
                 var tdName = document.createElement("td");
                 tdName.innerHTML = utilitiesArray[i].name;
                 var tdMetric = document.createElement("td");
@@ -94,7 +137,8 @@ function clear() {
 function initEvents() {
 
     setArray();
-    makeUtilitiesTable(arrayPrincipal);
+    setArray2();
+    makeUtilitiesTable(arrayPrincipal,arrayPrincipalb);
 
 }
 

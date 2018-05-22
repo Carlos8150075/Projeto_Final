@@ -41,9 +41,10 @@ and open the template in the editor.
         <!-- Custom styles for this template-->
         
         <link href="assets/css/sb-admin.css" rel="stylesheet">
-        <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
         <script src="assets/js/gastos_gerais_utilities.js" type="text/javascript"></script>
         <script src="assets/js/gastos_gerais_utilities2.js" type="text/javascript"></script>
+        <script src="assets/js/generate_cards.js" type="text/javascript"></script>
+        <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
         <script type="text/javascript">
                       
                            // alert('ola');
@@ -61,6 +62,7 @@ and open the template in the editor.
     include_once './assets/templates/cards.php';
     include_once './assets/templates/graficos/iniciais.php';
     ?>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

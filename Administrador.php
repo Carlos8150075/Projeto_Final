@@ -38,6 +38,8 @@ and open the template in the editor.
         <script src="assets/js/gastos_gerais_utilities2.js" type="text/javascript"></script>
         <script src="assets/js/registos_admin.js" type="text/javascript"></script>
         <script src="assets/js/registos_admin2.js" type="text/javascript"></script>
+        <script src="assets/js/table_registos_admin.js" type="text/javascript"></script>
+        <script src="assets/js/table_utilities_admin.js" type="text/javascript"></script>
         <script type="text/javascript">
                       
                            // alert('ola');
