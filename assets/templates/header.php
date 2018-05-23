@@ -8,7 +8,7 @@ session_start();
 ?>
 
 
-<nav class="navbar navbar-expand-lg  navbar-light bg-light fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-light bg-light fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.php"><img src="assets/images/home-icon.png" style="width: 30px;"/></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -97,10 +97,10 @@ session_start();
                     <span class="nav-link-text">Mapa</span>
                 </a>
             </li>
-
-            
+             
 
         </ul>
+        
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
                 <a class="nav-link text-center" id="sidenavToggler">
@@ -173,6 +173,10 @@ session_start();
 
                         <div class="dropdown-message ">  <i class="fa fa-fw fas fa-cogs "></i>&nbsp;Definições</div>
                     </a>
+                    
+                   
+                    <a class="btn smaller btn-secondary" href="#" id="toggleNavColor" style="margin-left: 30px">Change color</a>
+           
 
 
                 </div>
@@ -182,7 +186,9 @@ session_start();
                     <i class="fa fa-fw fa-sign-out"></i>Logout</a>
             </li>
         </ul>
+        
     </div>
 </nav>
+
 
 

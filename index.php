@@ -73,6 +73,14 @@ and open the template in the editor.
     <!-- Custom scripts for this page-->
     <script src="assets/vendor/chart.js/Chart.min.js"></script>
     <!-- Custom scripts for this page-->
+     <script>
+    $('#toggleNavColor').click(function() {
+      $('nav').toggleClass('navbar-dark navbar-light');
+      $('nav').toggleClass('bg-dark bg-light');
+      $('body').toggleClass('bg-dark bg-light');
+    });
+
+    </script>
     
 </body>
 </html>
