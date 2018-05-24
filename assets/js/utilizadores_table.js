@@ -1,3 +1,20 @@
+function eliminarUsers() {
+    $.ajaxSetup({async: false});
+
+    var button = this;
+
+    var userID = localStorage.utilizadoresID;
+   
+
+    $.post("assets/Services/deleteUsersService.php", {action: 'disable', id: userID})
+            .fail(function () {
+                alert('Ajax error');
+            });
+
+
+}
+
+
 function getJsonUsers() {
     $.ajaxSetup({async: false});
     var json = "";
@@ -71,7 +88,10 @@ function makeUtilizadoresTable(UsersArray) {
             
             var del=document.createElement("button");
             del.setAttribute("class","btn btn-danger");
-           // del.innerHTML = "ola";
+            del.setAttribute("id",UsersArray[i].id);
+            del.setAttribute("onclick","myFunctionUtilizadores()");
+            
+            del.addEventListener('click', eliminarUsers);
              del.innerHTML="Eliminar";
             td1.appendChild(del);
             

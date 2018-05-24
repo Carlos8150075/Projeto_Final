@@ -11,19 +11,31 @@
             <div class="card-body">
 
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
                         <thead>
                             <tr>
                                 <th>Nº do Registo</th>
                                 <th>Utility</th>
                                 <th>Valor</th>
                                 <th>Data</th>
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody id="myTable">
                         </tbody>
                     </table>
                 </div>
+                
+                <script>
+                    function myFunctionRegistos() {
+
+
+                        var registoID = event.target.getAttribute('id');
+
+                        localStorage.setItem("registoID", registoID);
+
+                    }
+                </script>
 
 
             </div>

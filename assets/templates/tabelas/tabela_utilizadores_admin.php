@@ -26,7 +26,16 @@
                         </tbody>
                     </table>
                 </div>
+ <script>
+                    function myFunctionUtilizadores() {
 
+
+                        var utilizadoresID = event.target.getAttribute('id');
+
+                        localStorage.setItem("utilizadoresID", utilizadoresID);
+
+                    }
+                </script>
 
             </div>
         </div>

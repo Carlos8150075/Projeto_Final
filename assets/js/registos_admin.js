@@ -32,7 +32,7 @@ function makeCharts() {
     
     
     var dataCustos = {
-        label: "Gastos",
+        label: "Registos",
         data: dataRegisto,
         lineTension: 0.3,
         fill: false,

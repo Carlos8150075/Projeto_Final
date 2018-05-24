@@ -1,3 +1,21 @@
+function eliminarUtilities() {
+    $.ajaxSetup({async: false});
+
+    var button = this;
+
+    var delUtil = localStorage.delUtilID;
+   
+
+    $.post("assets/Services/deleteUtilitiesService.php", {action: 'disable', id: delUtil})
+            .fail(function () {
+                alert('Ajax error');
+            });
+
+
+}
+
+
+
 function getJsonUtilities() {
     $.ajaxSetup({async: false});
     var json = "";
@@ -96,8 +114,8 @@ function makeUtilitiesTable(utilitiesArray, ambientesarray) {
                 var tdId = document.createElement("td");
                 tdId.innerHTML = utilitiesArray[i].id;
                 var tdAmbiente = document.createElement("td");
-                for (var j = 0; j < utilitiesArray.length; j++) {
-                     if(ambientesarray[i].id==utilitiesArray[j].ambiente){
+                for (var j = 0; j < ambientesarray.length; j++) {
+                     if(ambientesarray[j].id==utilitiesArray[i].ambiente){
                         var ambiente=ambientesarray[j].name;
                      }
                      
@@ -107,12 +125,28 @@ function makeUtilitiesTable(utilitiesArray, ambientesarray) {
                 tdName.innerHTML = utilitiesArray[i].name;
                 var tdMetric = document.createElement("td");
                 tdMetric.innerHTML = utilitiesArray[i].metric;
+                
+                var td1=document.createElement("td");
+            
+            
+            var del=document.createElement("button");
+            del.setAttribute("class","btn btn-danger");
+           
+           
+            del.setAttribute("id",utilitiesArray[i].id);
+            del.setAttribute("onclick","myFunctionUtiliess()");
+            
+            del.addEventListener('click', eliminarUtilities);
+           
+             del.innerHTML="Eliminar";
+            td1.appendChild(del);
 
                 tr.appendChild(tdId);
                 tr.appendChild(tdAmbiente);
 
                 tr.appendChild(tdName);
                 tr.appendChild(tdMetric);
+                tr.appendChild(td1);
 
                 var tbody = document.getElementById("myTable");
 

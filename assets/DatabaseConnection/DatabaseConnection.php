@@ -108,6 +108,30 @@ class DatabaseConnection {
 
         $db = self::getDb();
         $db->delete('users', array('id' => $id));
+        
+    }
+    
+     public static function deleteUtilitie($id) {
+
+        $db = self::getDb();
+        $db->delete('utilities', array('id' => $id));
+        
+    }
+    
+    public static function deleteRegisto($id) {
+        
+
+        $db = self::getDb();
+        $db->delete('registo', array('id' => $id));
+        //self::resetDB();
+        //  }
+    }
+    
+    public static function updateAmbiente($id,$novo) {
+        
+
+        $db = self::getDb();
+        $db->delete('registo', array('id' => $id));
         //self::resetDB();
         //  }
     }

@@ -18,6 +18,7 @@
                                 <th>Ambiente</th>
                                 <th>Nome</th>
                                 <th>Metrica</th>
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody id="myTable">
@@ -28,5 +29,15 @@
 
             </div>
         </div>
-    </div>
+    </div><script>
+        function myFunctionUtiliess() {
+
+
+            var delUtilID = event.target.getAttribute('id');
+
+            localStorage.setItem("delUtilID", delUtilID);
+
+        }
+    </script>
+
 </div>
