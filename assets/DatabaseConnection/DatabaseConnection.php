@@ -96,10 +96,12 @@ class DatabaseConnection {
      * @param type $valor
      * @param type $date
      */
-    public static function addRegistos($username, $utility, $valor, $date) {
+    public static function addRegistos( $dateInicio, $dateFim,$valor) {
+        
+       
 
         $db = self::getDb();
-        $db->insert('registo', array('id_user' => $username, 'id_utility' => $utility, 'valor' => $valor, 'date' => $date));
+        $db->insert('periodo', array('start' => $dateInicio, 'end' => $dateFim, 'price' => $valor));
         //self::resetDB();
         //  }
     }
@@ -129,9 +131,9 @@ class DatabaseConnection {
     
     public static function updateAmbiente($id,$novo) {
         
-
+        
         $db = self::getDb();
-        $db->delete('registo', array('id' => $id));
+        $db->update('ambientes', array('name' => $novo),array('id' => 3));
         //self::resetDB();
         //  }
     }
@@ -139,16 +141,11 @@ class DatabaseConnection {
     
      public static function addAmbientesIniciais($id_user) {
          $nome1="Ambiente 1";
-         $nome2="Ambiente 2";
-         $nome3="Ambiente 3";
-         $nome4="Ambiente 4";
+         
                  
                  
         $db = self::getDb();
         $db->insert('ambientes', array('name' => $nome1, 'id_user' => $id_user));
-        $db->insert('ambientes', array('name' => $nome2, 'id_user' => $id_user));
-        $db->insert('ambientes', array('name' => $nome3, 'id_user' => $id_user));
-        $db->insert('ambientes', array('name' => $nome4, 'id_user' => $id_user));
         //self::resetDB();
         //  }
     }
@@ -165,6 +162,19 @@ class DatabaseConnection {
         //self::resetDB();
         //  }
     }
+    
+     public static function addAmbiente( $name, $user) {
+
+        $db = self::getDb();
+   
+
+        $db->insert('ambientes', array( 'name' => $name,  'id_user' => $user));
+
+        //self::resetDB();
+        //  }
+    }
+    
+    
     
     public static function encontrarAmbiente( $name, $user) {
 

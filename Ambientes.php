@@ -34,6 +34,7 @@ and open the template in the editor.
         <!-- Custom styles for this template-->
         <script src="assets/js/generate_cards_utilities.js" type="text/javascript"></script>
         <link href="assets/css/sb-admin.css" rel="stylesheet">
+        <script src="assets/js/update_ambiente.js" type="text/javascript"></script>
         
     </head>
 </head>

@@ -1,19 +1,5 @@
 <?php 
 
-require_once 'assets/DatabaseConnection/DatabaseConnection.php';
-$db = new DatabaseConnection();
-
-session_start();
-
-//$userDeath = $db->getUsers(array("id" => $death['entity_id']))[0];
-
-error_reporting(E_ALL ^ E_NOTICE); 
-
-if (empty($_SESSION['user'])) {
-    header("Location: login.php");
-}
-$user = $db->getUsers(array("id" => $_SESSION['id']))[0];
-    $id = $_SESSION['id'];
 
 ?>
 <!DOCTYPE html>
@@ -30,7 +16,7 @@ and open the template in the editor.
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="assets/images/home-icon.png"/>
-        <title>Perfil</title>
+        <title>Inicio</title>
         <!--"assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"->
         <!-- Custom styles for this template-->
         <link href="assets/css/sb-admin.css" rel="stylesheet">
@@ -40,8 +26,10 @@ and open the template in the editor.
         <!-- Custom styles for this template-->
         
         <link href="assets/css/sb-admin.css" rel="stylesheet">
-        <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
         <script src="assets/js/gastos_gerais_utilities.js" type="text/javascript"></script>
+        <script src="assets/js/gastos_gerais_utilities2.js" type="text/javascript"></script>
+        <script src="assets/js/generate_cards.js" type="text/javascript"></script>
+        <script src="assets/js/utilities_nav.js" type="text/javascript"></script>
         <script type="text/javascript">
                       
                            // alert('ola');
@@ -51,55 +39,83 @@ and open the template in the editor.
                           localStorage.setItem("utilizadorID",user);
                           
                         </script>
+                        
+                        <style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+</style>
     </head>
 </head>
-<body>
+<body    >
     <?php
-    include_once './assets/templates/header.php';
+   //include_once './assets/templates/header.php';
     ?>
     
-    
-<div class="content-wrapper" style="height: 100%"> 
-    <div class="container-fluid" style="margin-top: 120px">
-        <div class="card mb-3"  style="width: 66%; margin-left: 16.667%">
-            <div class="card-header">
-                <i class="fa fa-user" style="margin-left: 5px"></i>	&nbsp;Perfil</div>
-                
-            <div class="panel-body ">
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>ID :</td>
-                            <td><?php echo $id ?></td>
-                        </tr>
-                        <tr>
-                            <td>Name :</td>
-                            <td><?=  $user['name'];?></td>
-                            
-                        </tr>
-                        <tr>
-                         <td>Username</td>
-                            <td><?=  $user['surname'] ;?></td>
-                        </tr>
-                        <tr>
-                            <td>Regiao :</td>
-                            <td> <?= $user['regiao']?></td>
-                        </tr>
-                        <tr>
-                            <td>Email :</td>
-                            <td><?php echo $_SESSION['user'];?></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-footer">
-                <a data-toggle="tooltip" type="button" class="btn btn-sm btn-light" href="index.php"style="height: 38px;">Inicio</i></a>
-              
-            </div> 
-
-        </div>
-    </div>
+    <div class="header">
+        <h1 style="display: inline ">Poupar</h1>
+        <img src="assets/images/home-icon.png" style="width: 60px; margin-left: 500px"/>
+  <div class="header-right">
+    <a  href="login.php">Login</a>
+    <a href="register.php">Registo</a>
+    <a href="about.php">About</a>
+  </div>
 </div>
+    
+    <img src="assets/images/oie_transparent.png" style="zoom: 80%; padding-left: 19% ; padding-top: 80px"> 
+    <a class="btn smaller btn-warning" href="index.php" id="toggleNavColor" style="margin-left: 600px ; margin-top: 10px">Get Started</a>
+    
+    
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -110,6 +126,14 @@ and open the template in the editor.
     <!-- Custom scripts for this page-->
     <script src="assets/vendor/chart.js/Chart.min.js"></script>
     <!-- Custom scripts for this page-->
+     <script>
+    $('#toggleNavColor').click(function() {
+      $('nav').toggleClass('navbar-dark navbar-light');
+      $('nav').toggleClass('bg-dark bg-light');
+      $('body').toggleClass('bg-dark bg-light');
+    });
+
+    </script>
     
 </body>
 </html>

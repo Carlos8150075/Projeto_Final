@@ -14,7 +14,7 @@ require_once '../DatabaseConnection/DatabaseConnection.php';
 $db = new DatabaseConnection();
 
 
-$novo = filter_input(INPUT_POST, 'action');
+$novo = filter_input(INPUT_POST, 'name');
 $id = filter_input(INPUT_POST, 'id');
 
  $db->updateAmbiente($id,$novo);

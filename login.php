@@ -9,7 +9,7 @@ require_once Config::getApplicationValidatorPath() . 'validateUsers.php';
   header('Location: index.php');
   } */
 
-$ola='ola';
+$ola = 'ola';
 
 session_start();
 $incorrect = "";
@@ -30,14 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //echo 'entrei2';
         $_SESSION['user'] = $username;
         $_SESSION['nome'] = DatabaseConnection::getNomeByEmail($username);
-        $_SESSION['id'] = DatabaseConnection::getUserByEmail($username);     
+        $_SESSION['id'] = DatabaseConnection::getUserByEmail($username);
         $_SESSION['level'] = DatabaseConnection::getLevelByEmail($username);
-        
-       // echo $_SESSION['nome'];
+
+        // echo $_SESSION['nome'];
 
         $id = $_SESSION['id'];
 
-     header('Location: index.php');
+        header('Location: index.php');
     } else if (!isset($errors['email'])) {
         $email = $array['email'];
     }
@@ -66,7 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <link href="assets/css/sb-admin.css" rel="stylesheet">
     </head>
     <header>
-        <img src="assets/images/home-icon.png" />
+        <a href="PaginaInicial.php">
+            <img src="assets/images/home-icon.png" style="zoom:7% ; margin-top: 600px; margin-left: 9300px">
+        </a>
+
     </header>
 
     <body class="bg-dark" style="background-image:url(assets/images/fundo.png)">
@@ -103,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Core plugin JavaScript-->
         <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-        
+
     </body>
 
 </html>

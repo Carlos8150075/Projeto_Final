@@ -60,9 +60,14 @@ session_start();
                         <a href="Utilities.php">
                             <i class="fa smaller fa-fw fa-book"></i> Registo das utilities</a>
                     </li>
+                     <li>
+                        <a href="Editar_Utility.php">
+                            <i class="fa smaller fa-fw fa-book"></i> Editar Utility</a>
+                    </li>
 
                 </ul>
             </li>
+            
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Utilities">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
@@ -92,11 +97,26 @@ session_start();
             </li>
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mapa">
+                <a class="nav-link" href="addPeriodo.php">
+                    <i class="fa fa-fw far fa-plus"></i>
+                    <span class="nav-link-text">Adicionar Periodo</span>
+                </a>
+            </li>
+            
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mapa">
+                <a class="nav-link" href="addAmbiente.php">
+                    <i class="fa fa-fw far fa-plus"></i>
+                    <span class="nav-link-text">Adicionar Ambiente</span>
+                </a>
+            </li>
+            
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mapa">
                 <a class="nav-link" href="map2.php">
                     <i class="fa fa-fw far fa-globe"></i>
                     <span class="nav-link-text">Mapa</span>
                 </a>
             </li>
+            
              
 
         </ul>
