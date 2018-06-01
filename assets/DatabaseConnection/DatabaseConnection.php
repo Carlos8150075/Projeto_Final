@@ -96,7 +96,18 @@ class DatabaseConnection {
      * @param type $valor
      * @param type $date
      */
-    public static function addRegistos( $dateInicio, $dateFim,$valor) {
+    public static function addRegistos( $id, $utility, $valor, $date) {
+        
+       
+
+        $db = self::getDb();
+        $db->insert('registo', array('id_user' => $id, 'id_utility' => $utility, 'valor' => $valor ,'date' =>$date));
+        //self::resetDB();
+        //  }
+    }
+    
+    
+     public static function addPeriodo( $dateInicio, $dateFim,$valor) {
         
        
 
